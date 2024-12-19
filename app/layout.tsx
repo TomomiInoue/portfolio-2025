@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { NextUIProvider } from "@nextui-org/react";
 
-import {Lato, Abril_Fatface} from "next/font/google";
+import { Lato, Abril_Fatface } from "next/font/google";
+import { Header } from "./components/Layout/Header/Header";
+import { useEffect, useState } from "react";
 
 const abrilFatface = Abril_Fatface({
   subsets: ["latin"],
@@ -26,10 +29,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" className={`${lato.className} ${abrilFatface.variable}`}>
       <body>
-        {children}
+        <NextUIProvider>
+          <Header />
+          {children}
+        </NextUIProvider>
       </body>
     </html>
   );
