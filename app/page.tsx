@@ -1,12 +1,15 @@
 import NextImage from 'next/image';
 import { AboutComponent } from './components/Section/About/About';
 import { LandingComponent } from './components/Section/Landing/Landing';
+import { WorkComponent } from './components/Section/Work/Work';
+
 
 export default function Home() {
   return (
     <div className="bg-primary">
       <LandingComponent />
       <AboutComponent />
+      <WorkComponent />
       {/* <div className="container py-20 h-full">
         <div className="text-5xl text-secondary">Hello, I&apos;m Tomomi</div>
         <h1 className="text-display02 text-accent leading-loose">Web Developer & Web Designer</h1>

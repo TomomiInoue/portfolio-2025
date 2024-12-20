@@ -2,7 +2,7 @@ import NextImage from 'next/image';
 
 export const AboutComponent = () => {
     return (
-        <div className="container py-20 h-screen">
+        <div className="container py-20 h-screen" id="about">
             <div className='grid grid-cols-5 gap-10'>
                 <div className='col-span-3'>
                     <div className='text-xl text-black text-left font-normal mb-5'>About me</div>

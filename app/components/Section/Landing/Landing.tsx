@@ -2,7 +2,7 @@ import NextImage from "next/image";
 
 export const LandingComponent = () => {
     return (
-        <div className="container py-20 h-screen">
+        <div className="container py-20 h-screen" id="top">
             <div className="text-5xl text-secondary">Hello, I&apos;m Tomomi</div>
             <h1 className="text-display02 text-accent leading-loose">
                 Web Developer & Web Designer
