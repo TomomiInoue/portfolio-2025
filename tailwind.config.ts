@@ -1,14 +1,19 @@
-const {nextui} = require("@nextui-org/react");
+import { nextui } from "@nextui-org/react";
 
 const extendedTheme = {
   colors: {
-    primary: "#fff8ed",
-    secondary: "#393636",
-    accent: "#2273f3",
+    primary: "#D9CFBD",
+    secondary: "#FF6F61",
+    bone: "#D9CFBD",
+    cream: "#F1F3E6",
+    lightBlue: "#C2DEDC",
+    darkGreen: "#0D4955",
+    orange: "#FF6F61",
   },
   fontSize: {
-    display01: ["48px", { lineHeight: "120%", fontWeight: "600", fontFamily: "Abril Fatface" }],
-    display02: ["60px", { lineHeight: "120%", fontWeight: "600", fontFamily: "Abril Fatface" }],
+    display01: ["48px", { lineHeight: "120%", fontWeight: "600" }],
+    display02: ["60px", { lineHeight: "120%", fontWeight: "600" }],
+    heading01: ["36px", { lineHeight: "120%", fontWeight: "600" }],
   }
 }
 

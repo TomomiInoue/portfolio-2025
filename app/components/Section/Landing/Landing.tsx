@@ -1,43 +1,32 @@
+import React from "react";
 import NextImage from "next/image";
 
 export const LandingComponent = () => {
     return (
-        <div className="container py-20 h-screen" id="top">
-            <div className="text-5xl text-secondary">Hello, I&apos;m Tomomi</div>
-            <h1 className="text-display02 text-accent leading-loose">
-                Web Developer & Web Designer
-            </h1>
-            <div className="flex gap-6 pt-10">
-                <div className="relative w-[780px] h-[480px]">
-                    <NextImage
-                        src="/images/cheater-five.jpg"
-                        alt="Tomomi Inoue"
-                        fill
-                        className="rounded-md object-cover"
-                    />
-                </div>
-                <div className="flex flex-col gap-4 w-full max-w-[350px] align-middle items-start self-center">
-                    <div className="flex gap-4">
-                        <h4 className="text-4xl text-accent text-left font-bold">
-                            Tomomi Inoue
-                        </h4>
-                    </div>
-                    <div className="text-base">
-                        Free lance Web Developer & Web designer, based in Byron Bay NSW
-                        Australia. I have over 3 years of experience of web development.
-                    </div>
-                    <div className="text-base">
-                        Most of my career, I was focusing on front end web development work.
-                        I have worked with a variety of clients from small businesses to
-                        large corporations.
-                    </div>
-                    <div className="text-base">
-                        My specialty is creating custom websites for clients that are easy
-                        to manage and update. Using Typescript, React, Next.js, Tailwind
-                        CSS, and Shopify.
-                    </div>
+        <>
+            <div className="absolute top-0 w-full h-screen">
+                <NextImage
+                    src="/images/cheater-five.jpg"
+                    alt="Tomomi Inoue"
+                    layout="fill"
+                    objectFit="cover"
+                    quality={100}
+                />
+            </div>
+            <div className="absolute top-0 w-full h-screen">
+                <div className="px-[171px] h-full flex flex-col text-left justify-center items-start">
+                    <h1 className="text-display01 text-cream">I am <span className="inline text-orange">Tomomi Inoue</span></h1>
+                    <div className="text-heading01 font-medium text-cream">Freelance Web Developer & Designer</div>
+                    <div className="text-heading01 font-medium text-cream">Passionate Surfer, Yogini and World traveler</div>
                 </div>
             </div>
-        </div>
+            <div className="w-full min-h-screen bg-gray-100 flex items-center justify-center">
+                <div className="text-center">
+                    <h2 className="text-2xl font-bold">Second Section</h2>
+                    <p className="text-lg">This is the second section of your landing page.</p>
+                </div>
+            </div>
+        </>
+
     );
 };

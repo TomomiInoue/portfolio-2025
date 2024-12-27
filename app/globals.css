@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=AbrilFatface&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:ital,wght@0,400..900;1,400..900&display=swap");
+
 
 :root {
   --background: #fff8ed;
@@ -18,9 +21,9 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Lato", sans-serif, "Abril Fatface", cursive;
+  font-family: "Heebo", sans-serif "Playfair", serif "Playfair Display", serif;
 }
 
 h1, h2, h3 {
-  font-family: "Abril Fatface", cursive;
+  font-family: "Playfair Display", serif;
 }

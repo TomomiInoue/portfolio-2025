@@ -1,41 +1,32 @@
 "use client"
 
-import { Divider, Navbar, NavbarContent, NavbarItem } from "@nextui-org/react"
+import React from "react"
+import {  Navbar, NavbarContent, NavbarItem } from "@nextui-org/react"
 import clsx from "clsx"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 const navItems = [
     {
         label: 'Home',
-        href: '#top'
+        href: '/'
     },
     {
         label: 'About',
-        href: '#about'
-    },
-    {
-        label: 'Work',
-        href: '#work'
+        href: '/about'
     },
     {
         label: 'Contact',
-        href: '#contact'
+        href: '/contact'
     }
 ]
 export const Header = () => {
-
-    const handleScroll = (href: string) => {
-        //scroll to href id
-        const target = document.querySelector(href ?? '')
-        target?.scrollIntoView({ behavior: 'smooth' })
-
-    }
-    // const scrolled
+const router = useRouter()
     return (
-        <Navbar isBordered shouldHideOnScroll className={clsx("bg-primary w-full h-[60px] flex justify-end items-center p-4 gap-6")}>
+        <Navbar isBordered shouldHideOnScroll className={clsx("w-full h-[60px] flex justify-end items-center p-4 gap-6", onscroll? "bg-bone": "bg-transparent")}>
             <NavbarContent justify="end" className="flex gap-6">
             {navItems.map((item) => (
-                <NavbarItem key={item.label} className="text-secondary text-lg font-bold" onClick={() => handleScroll(item.href)}>{item.label}</NavbarItem>
+                <NavbarItem key={item.label} className="text-darkGreen text-lg font-bold" onClick={() => router.push(item.href)}>{item.label}</NavbarItem>
             ))}
             </NavbarContent>
         </Navbar>
