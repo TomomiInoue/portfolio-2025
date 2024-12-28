@@ -3,17 +3,18 @@ import { nextui } from "@nextui-org/react";
 const extendedTheme = {
   colors: {
     primary: "#D9CFBD",
-    secondary: "#FF6F61",
+    secondary: "#4E3B31",
+    accent: "#FF6F61",
     bone: "#D9CFBD",
     cream: "#F1F3E6",
-    lightBlue: "#C2DEDC",
-    darkGreen: "#0D4955",
     orange: "#FF6F61",
+    brown: "#4E3B31",
   },
   fontSize: {
-    display01: ["48px", { lineHeight: "120%", fontWeight: "600" }],
-    display02: ["60px", { lineHeight: "120%", fontWeight: "600" }],
-    heading01: ["36px", { lineHeight: "120%", fontWeight: "600" }],
+    display01: ["48px", { lineHeight: "120%", fontWeight: "600", fontFamily: "var(--font-playfair-display)" }],
+    display02: ["60px", { lineHeight: "120%", fontWeight: "600", fontFamily: "var(--font-playfair-display)" }],
+    heading01: ["40px", { lineHeight: "120%", fontWeight: "600", fontFamily: "var(--font-playfair)" }],
+    body01: ["36px", { lineHeight: "120%", fontWeight: "600", fontFamily: "var(--font-heebo)" }],
   }
 }
 

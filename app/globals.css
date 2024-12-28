@@ -7,23 +7,28 @@
 
 
 :root {
-  --background: #fff8ed;
-  --foreground: #393636;
+  --background: #D9CFBD;
+  --foreground: #4E3B31;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #393636;
-    --foreground: #fff8ed;
+    --background: #D9CFBD;
+    --foreground: #4E3B31;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Heebo", sans-serif "Playfair", serif "Playfair Display", serif;
+  font-family: "Heebo", sans-serif;
+
 }
 
 h1, h2, h3 {
   font-family: "Playfair Display", serif;
+}
+
+h4, h5, h6 {
+  font-family: "Playfair", serif;
 }

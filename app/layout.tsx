@@ -30,7 +30,10 @@ const heebo = Heebo({
 
 export const metadata: Metadata = {
   title: "Portfolio Tomomi Inoue",
-  description: "Front end ",
+  description: "Front end web developer and designer",
+  icons: {
+   icon: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({
