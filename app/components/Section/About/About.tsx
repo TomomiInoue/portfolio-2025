@@ -25,7 +25,7 @@ export const AboutComponent = () => {
             {/* Second Section */}
             <div className="w-full min-h-screen flex items-center justify-center py-[80px]">
                 <div className="container h-full">
-                    <h3 className="text-3xl font-bold text-accent mb-10">About Me</h3>
+                    <h3 className="text-[48px] font-bold text-accent">About Me</h3>
                     <ImageAndTextSideBySide
                         item={{
                             image: {
@@ -33,7 +33,7 @@ export const AboutComponent = () => {
                                 alt: "working on the desk shot from behind"
                             },
                             title: "title here",
-                            text: "text here"
+                            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                         }}
                     />
                      <ImageAndTextSideBySide
@@ -43,7 +43,7 @@ export const AboutComponent = () => {
                                 alt: "yoga at the field"
                             },
                             title: "title here",
-                            text: "text here",
+                            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             isImageRight: true  
                         }}
                     />
@@ -54,7 +54,7 @@ export const AboutComponent = () => {
                                 alt: "smiling on the longboard in the ocean"
                             },
                             title: "title here",
-                            text: "text here",
+                            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                         }}
                     />
                 </div>

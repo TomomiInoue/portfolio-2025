@@ -5,7 +5,7 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/reac
 import { useRouter } from "next/navigation"
 import NextImage from "next/image"
 import { cn } from "@/app/lib/utils"
-
+import { motion } from "framer-motion";
 
 const navItems = [
     {
@@ -26,17 +26,26 @@ export const Header = () => {
     const [isPageTop, setIsPageTop] = useState(true)
 
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY === 0) {
-                setIsPageTop(true)
-            } else {
-                setIsPageTop(false)
-            }
-        }
-        )
-    }
-        , [])
+        const handleScroll = () => {
+          setIsPageTop(window.scrollY === 0);
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+
     return (
+        <motion.div
+        initial={{ opacity: 0, y: -20 }} // Start hidden and slightly above
+        animate={{
+          opacity: isPageTop ? 0 : 1,
+          y: isPageTop ? -20 : 0, // Slide down smoothly
+        }}
+        transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth animation
+        className="fixed top-0 left-0 w-full z-50"
+      >
         <Navbar
             classNames={{
                 wrapper: cn("h-[60px] justify-around items-center p-4 gap-6  max-w-screen-xl mx-[80px]",
@@ -57,5 +66,6 @@ export const Header = () => {
                 ))}
             </NavbarContent>
         </Navbar>
+        </motion.div>
     )
 }
