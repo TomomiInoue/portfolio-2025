@@ -1,9 +1,11 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react"
 import { useRouter } from "next/navigation"
 import NextImage from "next/image"
+import { cn } from "@/app/lib/utils"
+
 
 const navItems = [
     {
@@ -15,22 +17,36 @@ const navItems = [
         href: '/about'
     },
     {
-        label: 'Contact',
-        href: '/contact'
+        label: 'Connect',
+        href: '/connect'
     }
 ]
 export const Header = () => {
     const router = useRouter()
+    const [isPageTop, setIsPageTop] = useState(true)
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY === 0) {
+                setIsPageTop(true)
+            } else {
+                setIsPageTop(false)
+            }
+        }
+        )
+    }
+        , [])
     return (
-        <Navbar isBordered shouldHideOnScroll
-        classNames={{
-            wrapper: "h-[60px] flex justify-around items-center p-4 gap-6 bg-cream max-w-screen-xl mx-[80px]]",
-            content: "w-full flex justify-between items-center",
-            brand: "flex items-center gap-2",
-            item: "text-secondary text-lg font-bold cursor-pointer hover:opacity-70",
-            
-        }
-        }
+        <Navbar
+            classNames={{
+                wrapper: cn("h-[60px] justify-around items-center p-4 gap-6  max-w-screen-xl mx-[80px]",
+                    isPageTop ? "hidden" : "flex"
+                ),
+                content: "w-full flex justify-between items-center",
+                brand: "flex items-center gap-2",
+                item: "text-secondary text-lg font-bold cursor-pointer hover:opacity-70",
+            }
+            }
         >
             <NavbarBrand>
                 <NextImage src="/logo/tomomi-logo.png" alt="Tomomi Inoue" width={40} height={40} />

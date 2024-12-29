@@ -43,8 +43,8 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" className={`${playfairDisplay.className} ${playfair.variable} ${heebo.variable}`}>
-      <body>
+    <html lang="en">
+      <body className={`${playfairDisplay.className} ${playfair.variable} ${heebo.variable}`}>
         <NextUIProvider>
           <Header />
           {children}
