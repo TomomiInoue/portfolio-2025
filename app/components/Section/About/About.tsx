@@ -1,6 +1,7 @@
 import React from 'react';
 import NextImage from 'next/image';
 import { ImageAndTextSideBySide } from './ImageAndTextSideBySide';
+import { TimelineComponent } from './TimelineComponent';
 
 export const AboutComponent = () => {
     return (
@@ -25,7 +26,7 @@ export const AboutComponent = () => {
             {/* Second Section */}
             <div className="w-full min-h-screen flex items-center justify-center py-[80px]">
                 <div className="container h-full">
-                    <h3 className="text-[48px] font-bold text-accent">About Me</h3>
+                    <h4 className="text-[42px] font-semibold text-accent">About Me</h4>
                     <ImageAndTextSideBySide
                         item={{
                             image: {
@@ -57,6 +58,8 @@ export const AboutComponent = () => {
                             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                         }}
                     />
+                     <h4 className="text-[42px] font-semibold text-accent mb-6">Stroll Through My Glory Days</h4>
+                    <TimelineComponent />
                 </div>
             </div>
         </>

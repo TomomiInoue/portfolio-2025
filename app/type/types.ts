@@ -7,3 +7,15 @@ export type ImageAndTextSideBySiteType = {
   };
   isImageRight?: boolean;
 };
+
+export type TimelineItemType = {
+  date: string;
+  title: string;
+  description: string;
+  image?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+};
