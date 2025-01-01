@@ -8,9 +8,10 @@ import { motion, useInView } from "framer-motion";
 
 interface Props {
     item: ImageAndTextSideBySiteType;
+    screenSize: number;
 }
 
-export const ImageAndTextSideBySide = ({ item }: Props) => {
+export const ImageAndTextSideBySide = ({ item, screenSize }: Props) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.5 });
 
@@ -18,7 +19,8 @@ export const ImageAndTextSideBySide = ({ item }: Props) => {
     const textVariants = {
         hidden: { y: 100, opacity: 0 },
         visible: {
-            y: -120,
+            y: screenSize > 768 ? -120 : 0,
+            // y: -120,
             opacity: 1,
             transition: { duration: 2.2, ease: "easeOut" },
         },
@@ -40,7 +42,7 @@ export const ImageAndTextSideBySide = ({ item }: Props) => {
         // <div ref={ref} className={cn("grid grid-cols-8 grid-rows-1 gap-5 items-center")}>
         <motion.div
             ref={ref}
-            className={cn("grid grid-cols-8 gap-5 items-center py-[80px]")}
+            className={cn("flex flex-col lg:grid lg:grid-cols-8 gap-5 items-center py-10 lg:py-[80px]")}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             exit="exit"
@@ -50,7 +52,7 @@ export const ImageAndTextSideBySide = ({ item }: Props) => {
             <div
                 className={cn(
                     "relative h-[626px] col-span-3",
-                    item.isImageRight ? "order-2 col-start-6" : "col-start-1"
+                    item.isImageRight ? "lg:order-2 lg:col-start-6" : "lg:col-start-1"
                 )}
             >
 
@@ -67,20 +69,13 @@ export const ImageAndTextSideBySide = ({ item }: Props) => {
             {/* Text Block */}
             <motion.div
                 className={cn(
-                    "flex flex-col gap-6 col-span-4",
-                    item.isImageRight ? "order-1 col-start-1" : "col-start-5"
+                    "flex flex-col gap-6 lg:col-span-4",
+                    item.isImageRight ? "lg:order-1 lg:col-start-1" : "lg:col-start-5"
                 )}
                 variants={textVariants}
             >
-                <div
-                    className={cn(
-                        "flex flex-col gap-6 col-span-4",
-                        item.isImageRight ? "order-1 col-start-1" : "col-start-5"
-                    )}
-                >
-                    <h4 className="text-[40px] font-semibold">{item.title}</h4>
-                    <p className="text-lg font-normal">{item.text}</p>
-                </div>
+                    <h4 className="text-heading02 lg:text-heading01  font-semibold leading-tight lg:max-w-[85%]">{item.title}</h4>
+                    <p className="text-caption01 font-heebo lg:max-w-[80%] leading-relaxed">{item.text}</p>
             </motion.div>
         </motion.div>
 

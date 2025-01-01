@@ -14,7 +14,7 @@ export const LandingComponent = () => {
                     objectFit="cover"
                     quality={100}
                 />
-                <div className="relative -top-20 w-full max-w-[1280px] mx-auto h-full flex flex-col text-left justify-center items-start px-4">
+                <div className="relative lg:-top-20 w-full lg:max-w-[1280px] mx-auto h-full flex flex-col text-left justify-center items-start px-4">
                     <motion.div
                         initial={{
                             opacity: 0,
@@ -28,8 +28,8 @@ export const LandingComponent = () => {
                             }
                         }}
                         viewport={{ once: true }}>
-                        <h1 className="font-bold text-[88px] text-cream mb-6">
-                            I am <span className="inline text-orange">Tomomi Inoue</span>
+                        <h1 className="font-bold text-display03 lg:text-display01 text-cream mb-6">
+                            I am <span className="lg:inline text-orange">Tomomi Inoue</span>
                         </h1>
                     </motion.div>
                     <motion.div
@@ -45,8 +45,8 @@ export const LandingComponent = () => {
                             }
                         }}
                         viewport={{ once: true }}>
-                        <div className="text-body01 font-medium text-cream">Freelance Web Developer & Designer</div>
-                        <div className="text-body01 font-medium text-cream">
+                        <div className="text-body03 lg:text-body01 font-medium text-cream font-heebo">Freelance Web Developer & UX Designer</div>
+                        <div className="text-body-03 lg:text-body01 font-medium text-cream font-heebo">
                             Passionate Surfer, Yogini and World traveler
                         </div>
                     </motion.div>
@@ -54,9 +54,9 @@ export const LandingComponent = () => {
             </div>
 
             {/* Second Section */}
-            <div className="w-full min-h-screen flex items-center justify-center py-[80px]">
+            <div className="w-full min-h-screen flex items-center justify-center py-10 lg:py-[80px]">
                 <div className="container h-full">
-                    <div className="flex gap-[126px] items-center justify-center ">
+                    <div className="flex flex-col lg:flex-row gap-10 lg:gap-[126px] items-center justify-center ">
                     <div className="relative w-full left-0">
                         <NextImage
                             src="/images/ondesk-side.jpg"
@@ -67,10 +67,10 @@ export const LandingComponent = () => {
                         />
                     </div>
 
-                    <div className="flex flex-col w-[80%]">
-                        <h5 className="text-heading01 text-accent">text here</h5>
-                        <div className="text-base flex-wrap text-secodaty">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <div className="flex flex-col w-full lg:w-[80%] gap-5 lg:-mt-10">
+                        <h5 className="text-heading03 lg:text-heading01 text-accent">Designing with Empathy, Building with Precision</h5>
+                        <div className="text-body04 lg:text-body03 font-heebo flex-wrap text-secodaty">
+                        As a creative web developer and UX designer, I transform ideas into seamless digital experiences. Empathy guides my designs, problem-solving sharpens my code, and achieving client goals drives my passion for innovation and excellence.
                         </div>
 
                     </div>
@@ -83,7 +83,7 @@ export const LandingComponent = () => {
                             alt="taking a note"
                             width={327}
                             height={394}
-                            className="rounded-md object-cover shadow-lg"
+                            className="hidden lg:block rounded-md object-cover shadow-lg"
                         />
                         </div>
                         </div>
