@@ -17,18 +17,19 @@ export const TimelineComponent = () => {
         <VerticalTimelineElement
           key={index}
           date={item.date}
-          contentStyle={{ background: "#F1F3E6", color: "#4E3B31" }}
+          contentStyle={{ background: "#F1F3E6", color: "#4E3B31", boxShadow: "none"}}
           contentArrowStyle={{ borderRight: "7px solid #F1F3E6" }}
+          iconStyle={{ background: "#F1F3E6", border: "none" }}
         >
             <h3 className="text-lg font-semibold">{item.title}</h3>
-            <p className="text-sm">{item.description}</p>
+            <p className="text-sm mb-4">{item.description}</p>
             {item.image && (
             <NextImage
               src={item.image.src }
               alt={item.image.alt}
               width={item.image.width}
               height={item.image.height}
-              className="rounded-lg object-contain"
+              className="rounded-lg object-contain mt-4 justify-items-center text-center"
               />
             )}
         </VerticalTimelineElement>

@@ -26,9 +26,7 @@ export const AboutComponent = () => {
     return (
         <>
             {/* Hero Section */}
-
             <div className="relative w-full h-screen">
-
                 <NextImage
                     src={
                         screenSize > 768 ? "/images/barrel-pigdog.jpg" : "/images/sitting-on-board.jpg"

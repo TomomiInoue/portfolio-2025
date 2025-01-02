@@ -6,6 +6,7 @@ import { Header } from "./components/Layout/Header/Header";
 import { Playfair_Display } from 'next/font/google';
 import { Playfair } from "next/font/google";
 import { Heebo } from "next/font/google";
+import { Footer } from "./components/Layout/Footer/Footer";
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
@@ -48,6 +49,7 @@ export default function RootLayout({
         <NextUIProvider>
           <Header />
           {children}
+          <Footer />
         </NextUIProvider>
       </body>
     </html>
