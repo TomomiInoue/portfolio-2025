@@ -30,7 +30,7 @@ export const ConnectComponent = () => {
                     </div>
                 </div>
                 <div className="col-span-3">
-                    <NextImage src="/images/connect.jpg" alt="connect" layout="responsive" width={600} height={400} className="rounded-md" />
+                    <NextImage src="/images/connect.jpg" alt="connect" layout="responsive" priority width={600} height={400} className="rounded-md" />
                 </div>
             </div>
         </div>

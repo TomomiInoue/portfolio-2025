@@ -34,7 +34,7 @@ export const AboutComponent = () => {
                     alt="Tomomi Inoue"
                     layout="fill"
                     objectFit="cover"
-                    priority={true}
+                    priority
                 />
 
                 <div className="relative lg:top-20 w-full max-w-[1280px] mx-auto h-full flex flex-col justify-end text-left lg:justify-center items-start pb-5 lg:pb-0 px-4">

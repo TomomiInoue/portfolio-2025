@@ -7,6 +7,7 @@ import NextImage from "next/image"
 import { cn } from "@/app/lib/utils"
 import { motion } from "framer-motion";
 import { navItems } from "@/app/constants/navItem"
+import { MobileHeader } from "./MobileHeader"
 
 
 export const Header = () => {
@@ -29,6 +30,7 @@ export const Header = () => {
     }, [pathname]);
 
     return (
+        <>
         <motion.div
             initial={{ opacity: 0, y: -20 }} // Start hidden and slightly above
             animate={{
@@ -36,7 +38,7 @@ export const Header = () => {
                 y: isPageTop ? -20 : 0, // Slide down smoothly
             }}
             transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth animation
-            className="fixed top-0 left-0 w-full z-50"
+            className="fixed top-0 left-0 w-full z-50 hidden md:flex"
         >
             <Navbar
                 classNames={{
@@ -56,10 +58,16 @@ export const Header = () => {
                 </NavbarBrand>
                 <NavbarContent justify="end" className="flex gap-6">
                     {navItems.map((item) => (
-                        <NavbarItem key={item.label} onClick={() => router.push(item.href)}>{item.label}</NavbarItem>
+                        <NavbarItem key={item.label} onClick={() => router.push(item.href)}
+                        className={pathname === item.href ? "text-orange" : "text-secondary"}
+                        >{item.label}</NavbarItem>
                     ))}
                 </NavbarContent>
             </Navbar>
         </motion.div>
+        <div className="md:hidden">
+            <MobileHeader />
+        </div>
+        </>
     )
 }
