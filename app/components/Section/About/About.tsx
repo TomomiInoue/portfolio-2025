@@ -28,13 +28,20 @@ export const AboutComponent = () => {
             {/* Hero Section */}
             <div className="relative w-full h-screen">
                 <NextImage
-                    src={
-                        screenSize > 768 ? "/images/barrel-pigdog.jpg" : "/images/sitting-on-board.jpg"
-                    }
+                    src="/images/barrel-pigdog.jpg"
                     alt="Tomomi Inoue"
                     layout="fill"
                     objectFit="cover"
                     priority
+                    className='hidden lg:block'
+                />
+                <NextImage
+                src="/images/sitting-on-board.jpg"
+                alt="Tomomi Inoue sitting on surf board"
+                layout="fill"
+                objectFit="cover"
+                priority
+                className='lg:hidden'
                 />
 
                 <div className="relative lg:top-20 w-full max-w-[1280px] mx-auto h-full flex flex-col justify-end text-left lg:justify-center items-start pb-5 lg:pb-0 px-4">
