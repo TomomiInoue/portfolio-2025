@@ -59,7 +59,7 @@ export const AboutComponent = () => {
                         screenSize={screenSize}
                         item={{
                             image: {
-                                src: "/images/onDesk-behind.jpg",
+                                src: "/images/ondesk-behind.jpg",
                                 alt: "working on the desk shot from behind"
                             },
                             title: "Bringing Ideas to Life with Precision and Passion",

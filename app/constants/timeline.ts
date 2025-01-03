@@ -49,7 +49,7 @@ export const timelineElements: TimelineItemType[] = [
       title: "WWOOFing in California",
       description: "I worked on organic farms in California, blending my passions for sustainability, surfing, and community through yoga teaching.",
       image: {
-        src: "/images/timeline/wwoof.jpg",
+        src: "/images/wwoofing.jpg",
         alt: "wwoof",
         width: 320,
         height: 240,
@@ -60,7 +60,7 @@ export const timelineElements: TimelineItemType[] = [
       title: "Traveling in Central America",
       description: "Exploring Central America allowed me to teach yoga, work on organic farms, and surf incredible waves, reinforcing my love for meaningful, sustainable living.",
       image: {
-        src: "/images/timeline/central-america.jpg",
+        src: "/images/mexico.jpg",
         alt: "central america",
         width: 320,
         height: 240,
@@ -70,6 +70,12 @@ export const timelineElements: TimelineItemType[] = [
       date: "2015",
       title: "Moved to Australia",
       description: "Australia became my next adventure, where I immersed myself in surfing, permaculture, and yoga, building a lifestyle rooted in harmony with nature.",
+      image: {
+        src: "/images/lennox-head.jpg",
+        alt: "Australia NSW",
+        width: 320,
+        height: 240,
+      },
     },
     {
       date: "2015",
@@ -94,7 +100,7 @@ export const timelineElements: TimelineItemType[] = [
       description:
         "Freelancing gave me the freedom to travel again while working on projects that focused on making a positive impact. While these projects were fulfilling, I realized the importance of prioritizing ethical and sustainable initiatives moving forward.",
       image: {
-        src: "/images/timeline/freelance.jpg",
+        src: "/images/wireframe.jpg",
         alt: "freelance",
         width: 320,
         height: 240,
@@ -106,7 +112,7 @@ export const timelineElements: TimelineItemType[] = [
       description:
         "Surfing dream waves in Indonesia inspired me to create a personal website showcasing my journey. This time also marked a shift in my focus toward working on projects that align with my values of ethics and sustainability, ensuring my skills contribute to positive and meaningful causes.",
       image: {
-        src: "/images/timeline/indonesia.jpg",
+        src: "/images/jennys.jpeg",
         alt: "indonesia",
         width: 320,
         height: 240,
