@@ -21,7 +21,7 @@ export const TimelineComponent = () => {
           contentArrowStyle={{ borderRight: "7px solid #F1F3E6" }}
           iconStyle={{ background: "#F1F3E6", border: "none" }}
         >
-          <h3 className="text-display05 text-accent">{item.date}</h3>
+          <h3 className="text-display05 text-accent mb-5">{item.date}</h3>
             <h3 className="text-heading03 mb-3">{item.title}</h3>
             <p className="text-caption01 mb-4 font-normal font-heebo leading-snug">{item.description}</p>
             <div className="w-full flex justify-center items-center">
