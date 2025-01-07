@@ -46,7 +46,7 @@ export const ConnectComponent = () => {
                 className="text-secondary"
               />
             </Link>
-            <Link href="" target="_blank">
+            <Link href="https://www.instagram.com/flowdesigncode/profilecard/?igsh=cHU2ZjcwaWFyaXVs" target="_blank">
               <Icon
                 icon="streamline:instagram-solid"
                 width="24"
