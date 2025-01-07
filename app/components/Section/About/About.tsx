@@ -53,7 +53,7 @@ export const AboutComponent = () => {
             </div>
             {/* Second Section */}
             <div className="w-full min-h-screen flex items-center justify-center py-10 lg:py-[80px]">
-                <div className="container h-full">
+                <div className="container h-full px-6 lg:px-0">
                     <h4 className="text-heading02 lg:text-heading01 font-semibold text-accent">About Me</h4>
                     <ImageAndTextSideBySide
                         screenSize={screenSize}

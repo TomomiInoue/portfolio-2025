@@ -6,7 +6,7 @@ import NextImage from "next/image";
 export const ConnectComponent = () => {
   return (
     <div className="h-screen flex flex-col md:flex-row items-center justify-center">
-      <div className="container grid grid-cols-1 lg:grid-cols-5 gap-10">
+      <div className="container grid grid-cols-1 lg:grid-cols-5 gap-10 px-6 lg:px-0">
         <div className="col-span-2 flex flex-col justify-center items-start">
           <h4 className="text-heading02 lg:text-heading01 font-semibold text-accent">
             Connect

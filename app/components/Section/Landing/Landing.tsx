@@ -11,15 +11,18 @@ export const LandingComponent = () => {
         const handleResize = () => {
             setIsDesktop(window.innerWidth > 768); // Set breakpoint for desktop
         };
-
         // Run once on mount
         handleResize();
-
         // Add event listener for window resize
         window.addEventListener("resize", handleResize);
-
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+
+    const getAnimationProps = (desktopProps: { opacity: number, x: number, y: number }, mobileProps: { opacity: number, x: number, y: number }) => {
+        return isDesktop ? desktopProps : mobileProps;
+    };
+
+
     return (
         <>
             {/* Hero Section */}
@@ -33,10 +36,10 @@ export const LandingComponent = () => {
                 />
                 <div className="relative lg:-top-20 w-full lg:max-w-[1280px] mx-auto h-full flex flex-col text-left justify-center items-start px-4">
                     <motion.div
-                        initial={isDesktop ?{
-                            opacity: 0,
-                            x: -300
-                        }: false}
+                        initial={getAnimationProps(
+                            { opacity: 0, x: -300, y: 0 },
+                            { opacity: 0, x: -120, y: 0 }
+                        )}
                         whileInView={{
                             opacity: 1,
                             x: 0, // Slide in to its original position
@@ -50,11 +53,10 @@ export const LandingComponent = () => {
                         </h1>
                     </motion.div>
                     <motion.div
-                        initial={isDesktop ? {
-                            opacity: 0,
-                            x: -400
-                        } : false}
-
+                        initial={getAnimationProps(
+                            { opacity: 0, x: -400, y: 0 },
+                            { opacity: 0, x: -80, y: 0 }
+                        )}
                         whileInView={{
                             opacity: 1,
                             x: 0,
@@ -89,9 +91,7 @@ export const LandingComponent = () => {
                             <NextImage
                                 src="/images/ondesk-side.jpg"
                                 alt="on computer working"
-                                // width={694}
                                 width={isDesktop ? 694 : 320}
-                                // height={458}
                                 height={isDesktop ? 458 : 180}
                                 className="rounded-md object-cover"
                             />

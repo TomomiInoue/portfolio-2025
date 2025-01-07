@@ -53,7 +53,7 @@ export const Header = () => {
             >
                 <NavbarBrand>
                     <Link href="/">
-                        <NextImage src="/logo/tomomi-logo.png" alt="Tomomi Inoue" width={40} height={40} />
+                        <NextImage src="/logo/tomomi-logo-dark.png" alt="Tomomi Inoue" width={40} height={40} />
                     </Link>
                 </NavbarBrand>
                 <NavbarContent justify="end" className="flex gap-6">

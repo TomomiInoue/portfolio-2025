@@ -9,11 +9,11 @@ export const MobileHeader = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const pathname = usePathname();
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen}>
+        <Navbar onMenuOpenChange={setIsMenuOpen} className="fixed top-0" shouldHideOnScroll>
           <NavbarContent>
             <NavbarBrand>
             <Link href="/">
-                        <NextImage src="/logo/tomomi-logo.png" alt="Tomomi Inoue" width={40} height={40} />
+                        <NextImage src="/logo/tomomi-logo-dark.png" alt="Tomomi Inoue" width={40} height={40} />
                     </Link>
             </NavbarBrand>
             <NavbarMenuToggle
@@ -30,8 +30,8 @@ export const MobileHeader = () => {
                 <Link
                   href={item.href}
                   size="lg"
-                  className={cn("w-full",
-                    pathname === item.href ? "text-orange" : "text-secondary")}
+                  className={cn("w-full text-base",
+                    pathname === item.href ? "text-orange font-semibold" : "text-secondary font-medium")}
                   
                 >
                   {item.label}
