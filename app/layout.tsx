@@ -12,28 +12,43 @@ const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-playfair-display',
-  weight: [ '400', '500', '600', '700', '800', '900']
+  weight: ['400', '500', '600', '700', '800', '900']
 });
 
 const playfair = Playfair({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-playfair',
-  weight: [ '400', '500', '600', '700', '800', '900']
+  weight: ['400', '500', '600', '700', '800', '900']
 });
 
 const heebo = Heebo({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-heebo',
-  weight: [ '400', '500', '600', '700', '800', '900']
+  weight: ['400', '500', '600', '700', '800', '900']
 });
 
 export const metadata: Metadata = {
   title: "Portfolio Tomomi Inoue",
   description: "Front end web developer and designer",
   icons: {
-   icon: "/favicon.ico",
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Portfolio Tomomi Inoue",
+    description: "Front end web developer and designer showcasing skills and projects.",
+    url: "https://flow-design-code.vercel.app/",
+    siteName: "Tomomi Inoue Portfolio",
+    images: [
+      {
+        url: "/logo/tomomi-logo-dark.png",
+        width: 1200,
+        height: 630,
+        alt: "Tomomi Inoue Portfolio Preview",
+      },
+    ],
+    type: "website",
   }
 };
 
@@ -47,7 +62,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${playfairDisplay.className} ${playfair.variable} ${heebo.variable}`}>
         <NextUIProvider>
-         <Header />
+          <Header />
           {children}
           <Footer />
         </NextUIProvider>
