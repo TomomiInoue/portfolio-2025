@@ -36,16 +36,16 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Portfolio Tomomi Inoue",
-    description: "Front end web developer and designer showcasing skills and projects.",
+    title: "Flow Design and Code website",
+    description: "Front end web developer and UX designer showcasing skills and projects.",
     url: "https://flow-design-code.vercel.app/",
-    siteName: "Tomomi Inoue Portfolio",
+    siteName: "Flow Design and Code website",
     images: [
       {
         url: "/logo/flow-logo.png",
         width: 1200,
         height: 630,
-        alt: "Tomomi Inoue Portfolio Preview",
+        alt: "Flow Design and Code website",
       },
     ],
     type: "website",
