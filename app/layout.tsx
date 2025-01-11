@@ -31,7 +31,7 @@ const heebo = Heebo({
 
 export const metadata: Metadata = {
   title: "Portfolio Tomomi Inoue",
-  description: "Front end web developer and designer",
+  description: "Front end web developer and UX designer",
   icons: {
     icon: "/favicon.ico",
   },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Tomomi Inoue Portfolio",
     images: [
       {
-        url: "/logo/tomomi-logo-dark.png",
+        url: "/logo/flow-logo.png",
         width: 1200,
         height: 630,
         alt: "Tomomi Inoue Portfolio Preview",
