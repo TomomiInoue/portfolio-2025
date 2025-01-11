@@ -11,7 +11,7 @@ export const Footer = () => {
             <div className="container px-6 lg:px-0 mx-auto grid grid-cols-2 gap-4 md:grid-cols-4 justify-between items-center">
                 <div className='col-span-2 flex gap-6 items-center'>
                     <Link href="/">
-                        <NextImage src="/logo/tomomi-logo-cream.png" alt="Tomomi Inoue" width={56} height={56} />
+                        <NextImage src="/logo/flow-logo-light.png" alt="Tomomi Inoue" width={78} height={78} />
                     </Link>
                     {navItems.map((item, index) => (
                         <Link key={index} href={item.href} passHref>

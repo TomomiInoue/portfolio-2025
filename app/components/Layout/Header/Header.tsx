@@ -42,7 +42,7 @@ export const Header = () => {
         >
             <Navbar
                 classNames={{
-                    wrapper: cn("h-[60px] justify-around items-center p-4 gap-6  max-w-screen-xl mx-[80px]",
+                    wrapper: cn("h-[78px] justify-around items-center p-4 gap-6  max-w-screen-xl mx-[80px]",
                         isPageTop ? "hidden" : "flex"
                     ),
                     content: "w-full flex justify-between items-center",
@@ -53,7 +53,7 @@ export const Header = () => {
             >
                 <NavbarBrand>
                     <Link href="/">
-                        <NextImage src="/logo/tomomi-logo-dark.png" alt="Tomomi Inoue" width={40} height={40} />
+                        <NextImage src="/logo/flow-logo.png" alt="Tomomi Inoue" width={68} height={68} />
                     </Link>
                 </NavbarBrand>
                 <NavbarContent justify="end" className="flex gap-6">

@@ -17,9 +17,9 @@ export const TimelineComponent = () => {
         <VerticalTimelineElement
           key={index}
           date={item.date}
-          contentStyle={{ background: "#F1F3E6", color: "#4E3B31", boxShadow: "none"}}
-          contentArrowStyle={{ borderRight: "7px solid #F1F3E6" }}
-          iconStyle={{ background: "#F1F3E6", border: "none" }}
+          contentStyle={{ background: "#FFFCF5", color: "#4E3B31", boxShadow: "none"}}
+          contentArrowStyle={{ borderRight: "7px solid #FFFCF5" }}
+          iconStyle={{ background: "#FFFCF5", border: "none" }}
         >
           <h3 className="text-display05 text-accent mb-5">{item.date}</h3>
             <h3 className="text-heading03 mb-3">{item.title}</h3>
