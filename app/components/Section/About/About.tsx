@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import NextImage from 'next/image';
 import { ImageAndTextSideBySide } from './ImageAndTextSideBySide';
-import { TimelineComponent } from './TimelineComponent';
 
 export const AboutComponent = () => {
     const [screenSize, setScreenSize] = useState<number>(0);
@@ -36,12 +35,12 @@ export const AboutComponent = () => {
                     className='hidden lg:block'
                 />
                 <NextImage
-                src="/images/sitting-on-board.jpg"
-                alt="Tomomi Inoue sitting on surf board"
-                layout="fill"
-                objectFit="cover"
-                priority
-                className='lg:hidden'
+                    src="/images/sitting-on-board.jpg"
+                    alt="Tomomi Inoue sitting on surf board"
+                    layout="fill"
+                    objectFit="cover"
+                    priority
+                    className='lg:hidden'
                 />
 
                 <div className="relative lg:top-20 w-full max-w-[1280px] mx-auto h-full flex flex-col justify-end text-left lg:justify-center items-start pb-5 lg:pb-0 px-4">
@@ -89,8 +88,8 @@ export const AboutComponent = () => {
                             text: "Surfing is my ultimate passion — an exhilarating blend of dedication, determination, and adventure. Traveling the world in pursuit of the perfect wave reflects my commitment to pushing boundaries and chasing dreams with unrelenting focus.",
                         }}
                     />
-                    <h4 className="text-[42px] font-semibold text-accent mb-6">Stroll Through My Glory Days</h4>
-                    <TimelineComponent />
+                    {/* <h4 className="text-[42px] font-semibold text-accent mb-6">Stroll Through My Glory Days</h4>
+                    <TimelineComponent /> */}
                 </div>
             </div>
         </>
