@@ -19,7 +19,7 @@ export const ImageAndTextSideBySide = ({ item, screenSize }: Props) => {
     const textVariants = {
         hidden: { y: 100, opacity: 0 },
         visible: {
-            y: screenSize > 768 ? -120 : 0,
+            y: screenSize > 768 ? -80 : 0,
             // y: -120,
             opacity: 1,
             transition: { duration: 2.2, ease: "easeOut" },
@@ -42,7 +42,7 @@ export const ImageAndTextSideBySide = ({ item, screenSize }: Props) => {
         // <div ref={ref} className={cn("grid grid-cols-8 grid-rows-1 gap-5 items-center")}>
         <motion.div
             ref={ref}
-            className={cn("flex flex-col lg:grid lg:grid-cols-8 gap-5 items-center py-10 lg:py-[80px]")}
+            className={cn("flex flex-col lg:flex-row gap-6 lg:gap-[100px] items-center py-10 justify-center")}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             exit="exit"
@@ -51,16 +51,16 @@ export const ImageAndTextSideBySide = ({ item, screenSize }: Props) => {
             {/* Image Block */}
             <div
                 className={cn(
-                    "relative h-[626px] col-span-3",
-                    item.isImageRight ? "lg:order-2 lg:col-start-6" : "lg:col-start-1"
+                    "relative block col-span-3",
+                    item.isImageRight ? "order-2" : "order-1"
                 )}
             >
 
                 <NextImage
                     src={item.image.src}
                     alt={item.image.alt}
-                    width={417}
-                    height={626}
+                    width={360}
+                    height={540}
                     className="rounded-lg object-cover"
                 />
             </div>
@@ -69,13 +69,13 @@ export const ImageAndTextSideBySide = ({ item, screenSize }: Props) => {
             {/* Text Block */}
             <motion.div
                 className={cn(
-                    "flex flex-col gap-6 lg:col-span-4",
-                    item.isImageRight ? "lg:order-1 lg:col-start-1" : "lg:col-start-5"
+                    "flex flex-col gap-6 max-w-[560px]",
+                    item.isImageRight ? "order-1" : "order-2"
                 )}
                 variants={textVariants}
             >
-                    <h4 className="text-heading02 lg:text-heading01  font-semibold leading-tight lg:max-w-[85%]">{item.title}</h4>
-                    <p className="text-caption01 font-heebo lg:max-w-[80%] leading-relaxed">{item.text}</p>
+                <h4 className="text-heading02 lg:text-heading01  font-semibold leading-tight lg:max-w-[85%]">{item.title}</h4>
+                <p className="text-caption01 font-heebo lg:max-w-[80%] leading-relaxed">{item.text}</p>
             </motion.div>
         </motion.div>
 

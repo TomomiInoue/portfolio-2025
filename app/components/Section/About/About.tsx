@@ -47,7 +47,7 @@ export const AboutComponent = () => {
                     <h1 className="text-display05 lg:text-display02 text-accent mb-6 lg:w-[55%] leading-tight">
                         Living My Passions, Creating With Purpose
                     </h1>
-                    <div className="text-body03 lg:text-body02 text-cream font-heebo lg:w-1/2">I blend creativity and determination in every aspect of my life, from crafting seamless digital experiences to embracing the power of the ocean, yoga, and mindful living</div>
+                    <div className="text-body03 lg:text-body02 font-regular text-cream font-heebo lg:w-1/3 pt-6">I blend creativity and determination in every aspect of my life, from crafting seamless digital experiences to embracing the power of the ocean, yoga, and mindful living</div>
                 </div>
             </div>
             {/* Second Section */}
