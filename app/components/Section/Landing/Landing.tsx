@@ -1,27 +1,32 @@
 "use client"
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import NextImage from "next/image";
 import * as motion from "motion/react-client"
+import { AboutIntro } from "./AboutIntro";
 
 export const LandingComponent = () => {
-    const [isDesktop, setIsDesktop] = useState(false);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsDesktop(window.innerWidth > 768); // Set breakpoint for desktop
-        };
-        // Run once on mount
-        handleResize();
-        // Add event listener for window resize
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    const getAnimationProps = (desktopProps: { opacity: number, x: number, y: number }, mobileProps: { opacity: number, x: number, y: number }) => {
-        return isDesktop ? desktopProps : mobileProps;
+    const containerVariants = {
+        hidden: {},
+        show: {
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
     };
 
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: [0.25, 0.1, 0.25, 1],
+            },
+        },
+    };
 
     return (
         <>
@@ -36,45 +41,37 @@ export const LandingComponent = () => {
                 />
                 <div className="relative lg:-top-20 w-full lg:max-w-[1280px] mx-auto h-full flex flex-col text-left justify-center items-start px-4">
                     <motion.div
-                        initial={getAnimationProps(
-                            { opacity: 0, x: -300, y: 0 },
-                            { opacity: 0, x: -120, y: 0 }
-                        )}
-                        whileInView={{
-                            opacity: 1,
-                            x: 0, // Slide in to its original position
-                            transition: {
-                                duration: 1 // Animation duration
-                            }
-                        }}
-                        viewport={{ once: true }}>
-                        <h1 className="font-bold text-display03 lg:text-display01 text-cream mb-6 max-w-[120px] lg:max-w-full">
-                            I am <span className="lg:inline text-orange">Tomomi Inoue</span>
-                        </h1>
-                    </motion.div>
-                    <motion.div
-                        initial={getAnimationProps(
-                            { opacity: 0, x: -400, y: 0 },
-                            { opacity: 0, x: -80, y: 0 }
-                        )}
-                        whileInView={{
-                            opacity: 1,
-                            x: 0,
-                            transition: {
-                                duration: 1.2
-                            }
-                        }}
-                        viewport={{ once: true }}>
-                        <div className="text-body03 lg:text-body01 font-medium text-cream font-heebo">Freelance Web Developer & UX Designer</div>
-                        <div className="text-body-03 lg:text-body01 font-medium text-cream font-heebo">
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="show"
+                        className="flex flex-col gap-3"
+                    >
+
+                        <motion.h1
+                            className="font-bold text-display03 lg:text-display01 text-cream mb-2 lg:mb-6 max-w-[120px] lg:max-w-full"
+                            variants={itemVariants}
+                        >
+                            FLOW <span className="lg:inline text-orange">Design & Code</span>
+                        </motion.h1>
+
+                        <motion.div
+                            className="text-body03 lg:text-body01 font-medium text-cream font-heebo"
+                            variants={itemVariants}
+                        >
+                            Freelance Web Developer & UX Designer
+                        </motion.div>
+                        <motion.div
+                            className="text-body03 lg:text-body01 font-medium text-cream font-heebo"
+                            variants={itemVariants}
+                        >
                             Passionate Surfer, Yogini and World traveler
-                        </div>
+                        </motion.div>
                     </motion.div>
-                </div>
-            </div>
+                </div >
+            </div >
 
             {/* Second Section */}
-            <div className="w-full h-full lg:min-h-screen flex items-center justify-center py-10 lg:py-[80px]">
+            {/* < div className="w-full h-full lg:min-h-screen flex items-center justify-center py-10 lg:py-[80px]" >
                 <div className="container h-full px-6 lg:px-0">
                     <div className="flex flex-col lg:flex-row gap-10 lg:gap-[126px] items-center justify-center ">
                         <motion.div
@@ -138,7 +135,8 @@ export const LandingComponent = () => {
                         </motion.div>
                     </div>
                 </div>
-            </div >
+            </div > */}
+            <AboutIntro />
         </>
     );
 };
