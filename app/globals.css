@@ -6,16 +6,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:ital,wght@0,400..900;1,400..900&display=swap");
 @import "react-vertical-timeline-component/style.min.css";
 
-
 :root {
-  --background: #D9CFBD;
-  --foreground: #4E3B31;
+  --background: #d9cfbd;
+  --foreground: #4e3b31;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #D9CFBD;
-    --foreground: #4E3B31;
+    --background: #d9cfbd;
+    --foreground: #4e3b31;
   }
 }
 
@@ -23,15 +22,22 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Heebo", sans-serif;
-
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Playfair Display", serif;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-family: "Playfair", serif;
+}
+
+p {
+  font-family: "Heebo", sans-serif;
 }
 
 .vertical-timeline-element-date {

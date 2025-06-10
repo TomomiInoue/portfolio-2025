@@ -1,14 +1,18 @@
 export const navItems = [
-    {
-        label: 'Home',
-        href: '/'
-    },
-    {
-        label: 'About',
-        href: '/about'
-    },
-    {
-        label: 'Connect',
-        href: '/connect'
-    }
-]
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "About",
+    href: "/about",
+  },
+  {
+    label: "Projects",
+    href: "/projects",
+  },
+  {
+    label: "Connect",
+    href: "/connect",
+  },
+];

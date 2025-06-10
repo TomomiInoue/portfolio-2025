@@ -19,3 +19,20 @@ export type TimelineItemType = {
     height: number;
   };
 };
+
+export type Project = {
+  name: string;
+  description: string;
+  url: string;
+  slug: string;
+  video?: {
+    desctop: string;
+    mobile: string;
+    alt: string;
+  };
+  images?: {
+    desktop: string;
+    mobile: string;
+    alt: string;
+  };
+};

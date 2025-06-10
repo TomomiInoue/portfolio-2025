@@ -28,6 +28,20 @@ export const LandingComponent = () => {
         },
     };
 
+    const handleScroll = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault();
+        const targetId = event.currentTarget.getAttribute("href");
+        if (targetId) {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+        }
+    };
+
     return (
         <>
             {/* Hero Section */}
@@ -68,75 +82,26 @@ export const LandingComponent = () => {
                         </motion.div>
                     </motion.div>
                 </div >
+
+                {/* Scroll Down Arrow */}
+                <div className="absolute bottom-6 w-full flex flex-col text-center justify-center z-10">
+                    <a
+                        className="animate-bounce text-brown text-6xl"
+                        aria-label="Scroll to About Section"
+                        onClick={handleScroll}
+                        href="#about"
+                    >
+                        ↓
+                    </a>
+                    scroll down
+                </div>
             </div >
 
-            {/* Second Section */}
-            {/* < div className="w-full h-full lg:min-h-screen flex items-center justify-center py-10 lg:py-[80px]" >
-                <div className="container h-full px-6 lg:px-0">
-                    <div className="flex flex-col lg:flex-row gap-10 lg:gap-[126px] items-center justify-center ">
-                        <motion.div
-                            className="relative w-full left-0"
-                            initial={{ opacity: 0, x: -200, rotate: -90 }}
-                            whileInView={{
-                                opacity: 1,
-                                x: 0,
-                                rotate: 0,
-                                transition: { duration: 1.5, ease: "easeOut" },
-                            }}
-                            viewport={{ once: true }}
-                        >
-                            <NextImage
-                                src="/images/ondesk-side.jpg"
-                                alt="on computer working"
-                                width={isDesktop ? 694 : 320}
-                                height={isDesktop ? 458 : 180}
-                                className="rounded-md object-cover"
-                            />
-                        </motion.div>
-
-                        <motion.div
-                            className="flex flex-col w-full lg:w-[80%] gap-5 lg:-mt-10"
-                            initial={{ opacity: 0, x: 200, rotate: 90 }}
-                            whileInView={{
-                                opacity: 1,
-                                x: 0,
-                                rotate: 0,
-                                transition: { duration: 1.5, ease: "easeOut" },
-                            }}
-                            viewport={{ once: true }}
-                        >
-                            <h5 className="text-heading03 lg:text-heading01 text-accent">Designing with Empathy, Building with Precision</h5>
-                            <div className="text-body04 lg:text-body03 font-heebo flex-wrap text-secodaty">
-                                As a creative web developer and UX designer, I transform ideas into seamless digital experiences. Empathy guides my designs, problem-solving sharpens my code, and achieving client goals drives my passion for innovation and excellence.
-                            </div>
-                        </motion.div>
-
-                    </div>
-                    <div className="hidden lg:grid lg:grid-cols-3">
-                        <div className="col-span-1" />
-                        <motion.div
-                            className="relative flex justify-end w-full h-[394px] col-span-1 m-[-80px]"
-                            initial={{ opacity: 0, y: 200, rotate: 90 }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0,
-                                rotate: 0,
-                                transition: { duration: 1.5, ease: "easeOut" },
-                            }}
-                            viewport={{ once: true }}
-                        >
-                            <NextImage
-                                src="/images/ondesk-writing.jpg"
-                                alt="taking a note"
-                                width={327}
-                                height={394}
-                                className="hidden lg:block rounded-md object-cover shadow-lg"
-                            />
-                        </motion.div>
-                    </div>
-                </div>
-            </div > */}
-            <AboutIntro />
+            {/* About Section with scroll anchor */}
+            < div id="about" >
+                <AboutIntro />
+            </div >
+            {/* <AboutIntro /> */}
         </>
     );
 };
