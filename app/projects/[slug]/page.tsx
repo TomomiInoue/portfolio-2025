@@ -12,6 +12,7 @@ type Params = {
 
 export default function ProjectDetailPage({ params }: Params) {
     const project = projects.find((p) => p.slug === `/${params.slug}`);
+
     if (!project) {
         return notFound(); // Shows 404
     }
