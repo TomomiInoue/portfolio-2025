@@ -3,14 +3,13 @@ import { notFound } from 'next/navigation';
 import { projects } from '@/app/constants/projects';
 import { ProjectDetailComponent } from '@/app/components/Section/Projects/ProjectDetailComponent/ProjectDetailComponent';
 
-
-type Params = {
+type ProjectDetailPageProps = {
     params: {
         slug: string;
     };
 };
 
-export default function ProjectDetailPage({ params }: Params) {
+export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
     const project = projects.find((p) => p.slug === `/${params.slug}`);
 
     if (!project) {
