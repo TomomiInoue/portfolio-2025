@@ -8,6 +8,11 @@ export const Footer = () => {
 
     return (
         <footer className="bg-brown text-cream py-6 lg:py-10">
+            <h2 className="container text-white text-[2rem] lg:text-[5rem] font-semibold leading-[1] uppercase mt-5 tracking-tight mb-10">
+                <span>Design to</span>
+                <br />
+                <span>Development</span>
+            </h2>
             <div className="container px-6 lg:px-0 mx-auto grid grid-cols-2 gap-4 md:grid-cols-4 justify-between items-center">
                 <div className='col-span-2 flex gap-6 items-center'>
                     <Link href="/">

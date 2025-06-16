@@ -21,8 +21,9 @@ export type TimelineItemType = {
 };
 
 export type Project = {
+  id: number;
   name: string;
-  description: string;
+  // description: string;
   url: string;
   slug: string;
   video?: {
@@ -35,4 +36,9 @@ export type Project = {
     mobile: string;
     alt: string;
   };
+  roles?: string;
+  development?: string;
+  projectSummary?: string;
+  duration?: string;
+  projectOverview?: string;
 };

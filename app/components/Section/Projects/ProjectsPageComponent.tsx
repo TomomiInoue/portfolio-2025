@@ -11,8 +11,8 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 
 export const ProjectsPageComponent: React.FC = () => {
     return (
-        <section className="container mx-auto px-6 py-20">
-            <h2 className="text-[56px] font-bold mb-12">Projects</h2>
+        <section className="container mx-auto px-6 py-40">
+            <h2 className="text-[56px] font-bold mb-12">Recent Projects</h2>
 
             <div className="space-y-24 mt-14 relative">
                 {projects.map((project: Project) => (
@@ -52,13 +52,13 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project }) => {
 
     return (
         <div
-            className="group relative"
+            className="container group relative"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
             <div className="text-lg pb-4 font-semibold">{project.name}</div>
             {/* Right-side Carousel Project Name */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 overflow-hidden hidden md:block z-0 pointer-events-none">
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 overflow-hidden hidden md:block z-0 pointer-events-none">
                 <motion.div
                     animate={controls}
                     initial={{ x: '0%' }}
@@ -69,7 +69,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project }) => {
             </div>
 
             {/* Images Row */}
-            <div className="relative z-10 flex flex-col md:flex-row gap-6 items-baseline w-2/3">
+            <div className="relative z-10 flex flex-col md:flex-row gap-6 items-baseline w-1/2">
                 {/* Mobile Image */}
                 <div className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg">
                     {project.images?.mobile && (
@@ -98,7 +98,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project }) => {
             </div>
 
             {/* View Details Button */}
-            <div className="mt-6 z-10 relative items-center justify-between flex">
+            <div className="mt-6 z-10 relative items-center justify-end flex">
                 <Link
                     href={`/projects/${project.slug}`}
                     className="px-6 py-2 text-base hover:opacity-70 transition flex"
