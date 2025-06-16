@@ -1,30 +1,33 @@
+// app/projects/[slug]/page.tsx
 import React from 'react';
 import { notFound } from 'next/navigation';
 import { projects } from '@/app/constants/projects';
 import { ProjectDetailComponent } from '@/app/components/Section/Projects/ProjectDetailComponent/ProjectDetailComponent';
 
-type ProjectDetailPageProps = {
-    params: {
-        slug: string;
-    };
-};
-
-export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-    const project = projects.find((p) => p.slug.endsWith(params.slug));
-
-
-    if (!project) {
-        return notFound(); // Shows 404
-    }
-
-    return (
-        <ProjectDetailComponent project={project} />
-    );
+interface PageProps {
+    params: Promise<{ slug: string }>;
 }
 
-// Inside [slug]/page.tsx or exported from a separate file
+export default async function ProjectDetailPage({
+    params,
+}: PageProps) {
+    const resolvedParams = await params;
+    const resolvedProjects = await projects;
+    const project = resolvedProjects.find((p) => p.slug.replace(/^\//, "") === resolvedParams.slug);
+
+    if (!project) {
+        notFound();
+    }
+
+    return <ProjectDetailComponent project={project} />;
+}
+
 export async function generateStaticParams() {
-    return projects.map((project) => ({
-        slug: project.slug.replace(/^\//, ""), // remove leading slash
+    const resolvedProjects = Array.isArray(projects)
+        ? projects
+        : await projects;
+
+    return resolvedProjects.map((project) => ({
+        slug: project.slug.replace(/^\//, ''),
     }));
 }

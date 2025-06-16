@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     id: 1,
     name: "Pilates Studio L",
-    slug: "/pilates-studio-l",
+    slug: "pilates-studio-l",
     images: {
       desktop: "/images/studio-l-desktop.png",
       mobile: "/images/studio-l-mobile.png",
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     id: 2,
     name: "Social Skool by KEELEY IVERSON",
     url: "https://www.socialskool.com/",
-    slug: "/social-skool",
+    slug: "social-skool",
     images: {
       desktop: "/images/social-skool-desktop.png",
       mobile: "/images/social-skool-mobile.png",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     id: 3,
     name: "松の杜 くげぬま",
     url: "https://www.matsunomorikugenuma.com/",
-    slug: "/matsunomori",
+    slug: "matsunomori",
     images: {
       desktop: "/images/matsumori-desktop.png",
       mobile: "/images/matsumori-mobile.png",
