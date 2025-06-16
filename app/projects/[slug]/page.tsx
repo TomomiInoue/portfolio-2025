@@ -10,7 +10,8 @@ type ProjectDetailPageProps = {
 };
 
 export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-    const project = projects.find((p) => p.slug === `/${params.slug}`);
+    const project = projects.find((p) => p.slug.endsWith(params.slug));
+
 
     if (!project) {
         return notFound(); // Shows 404
@@ -24,6 +25,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
 // Inside [slug]/page.tsx or exported from a separate file
 export async function generateStaticParams() {
     return projects.map((project) => ({
-        slug: project.slug,
+        slug: project.slug.replace(/^\//, ""), // remove leading slash
     }));
 }
