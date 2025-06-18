@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  i18n: {
+    locales: ["en-AU", "ja"],
+    defaultLocale: "en-AU",
+    localeDetection: true,
+  },
 };
 
 export default nextConfig;
