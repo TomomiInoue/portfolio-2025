@@ -8,6 +8,7 @@ import { cn } from "@/app/lib/utils"
 import { motion } from "framer-motion";
 import { navItems } from "@/app/constants/navItem"
 import { MobileHeader } from "./MobileHeader"
+import { LanguageSwitcher } from "../LanguageSwitch/LanguageSwitch"
 
 export const Header = () => {
     const router = useRouter()
@@ -31,8 +32,6 @@ export const Header = () => {
             setIsPageTop(false);
         }
     }, [pathname]);
-
-    console.log("isPageTop", isPageTop);
 
     return (
         <>
@@ -73,6 +72,9 @@ export const Header = () => {
                                 >{item.label}</NavbarItem>
                             )
                         })}
+                    </NavbarContent>
+                    <NavbarContent className="flex items-center gap-4">
+                        <LanguageSwitcher />
                     </NavbarContent>
                 </Navbar>
             </motion.div>

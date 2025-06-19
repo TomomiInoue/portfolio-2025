@@ -5,8 +5,12 @@ import NextImage from "next/image";
 import * as motion from "motion/react-client"
 import { AboutIntro } from "./AboutIntro";
 
-export const LandingComponent = () => {
-
+export const LandingComponent = ({
+    locale
+}: {
+    locale: string;
+}) => {
+    console.log("LandingComponent locale:", locale);
     const containerVariants = {
         hidden: {},
         show: {
@@ -72,7 +76,12 @@ export const LandingComponent = () => {
                             className="text-body03 lg:text-body01 font-medium text-cream font-heebo"
                             variants={itemVariants}
                         >
-                            Freelance Web Developer & UX Designer
+                            {
+                                locale === "ja"
+                                    ? `フロントエンド開発とUXデザインを専門とする、Tomomi Inoueのポートフォリオサイトへようこそ。`
+                                    : "Welcome to the portfolio site of Tomomi Inoue, specializing in frontend development and UX design."
+                            }
+                            {/* Freelance Web Developer & UX Designer */}
                         </motion.div>
                         <motion.div
                             className="text-body03 lg:text-body01 font-medium text-cream font-heebo"

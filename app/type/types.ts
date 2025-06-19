@@ -42,3 +42,13 @@ export type Project = {
   duration?: string;
   projectOverview?: string;
 };
+
+export type Locale = "en-AU" | "ja";
+
+export type AllowedLocales = Locale[];
+
+export type I18NConfig = {
+  locales: string[];
+  defaultLocale: string;
+  prefixDefault: boolean;
+};

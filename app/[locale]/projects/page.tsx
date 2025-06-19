@@ -1,5 +1,5 @@
+import { ProjectsPageComponent } from '@/app/components/Section/Projects/ProjectsPageComponent';
 import React from 'react';
-import { ProjectsPageComponent } from '../components/Section/Projects/ProjectsPageComponent';
 
 export default function Projects() {
     return (
