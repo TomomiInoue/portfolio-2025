@@ -7,8 +7,6 @@ const i18nConfig: I18NConfig = {
   locales: [...allowedLocales],
   defaultLocale,
   prefixDefault: false,
-  // localeDetection: true,
-  // localCookie: "NEXT_LOCALE",
 };
 
 export { i18nConfig };
