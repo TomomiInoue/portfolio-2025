@@ -43,3 +43,7 @@ p {
 .vertical-timeline-element-date {
   display: none !important;
 }
+
+.group:hover .underline-hover {
+  width: 100%;
+}

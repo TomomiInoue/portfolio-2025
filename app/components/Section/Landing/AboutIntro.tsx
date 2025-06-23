@@ -1,6 +1,7 @@
 'use client';
 
 import { LandingCopyTypes } from '@/app/type/types';
+import { cn, Link } from '@nextui-org/react';
 import { motion } from 'framer-motion';
 import NextImage from 'next/image';
 import React from 'react';
@@ -63,32 +64,48 @@ export const AboutIntro = ({
                         className="flex flex-col w-full lg:w-[80%] gap-5 lg:-mt-10"
                         variants={itemVariants}
                     >
-                        <h6 className="text-[20px] lg:text-heading03  text-secondary">
+                        <h6 className="text-[20px] lg:text-[28px] font-semibold  text-secondary">
                             {locale === 'en-AU'
                                 ? landingCopy.en.Subheadline.map((title, index) => (
                                     <div key={index}>
                                         {title}
-                                        {/* {index < landingCopy.en.Subheadline.length - 1 ? ' | ' : ''} */}
                                     </div>
                                 ))
                                 : landingCopy.ja.Subheadline.map((title, index) => (
                                     <div key={index}>
                                         {title}
-                                        {/* {index < landingCopy.ja.Subheadline.length - 1 ? ' | ' : ''} */}
                                     </div>
                                 ))
                             }
                         </h6>
-                        <div className="flex gap-2">
+                        <div className={cn("flex gap-1 text-base font-light text-secondary", locale === "ja" ? "flex-col" : "flex-row")}>
                             {locale === 'en-AU'
                                 ? landingCopy.en.description.map((line, index) => (
-                                    <p key={index} className="text-sm font-light font-heebo text-secondary">
+                                    <h5 key={index}>
                                         {line}
                                         {index < landingCopy.en.description.length - 1 ? ' / ' : ''}
+                                    </h5>
+                                ))
+                                : landingCopy.ja.description.map((line, index) => (
+                                    <p key={index}>
+                                        {line}
+                                        {index < landingCopy.ja.description.length - 1 ? ' / ' : ''}
                                     </p>
                                 ))
-                                : landingCopy.ja.description}
+                            }
                         </div>
+                        <Link href="/projects" className="self-end mt-5 group cursor-pointer">
+                            <div className="relative flex items-center justify-center text-brown py-3 px-4 rounded-md font-semibold text-2xl transition-all duration-300 hover:scale-[1.02]">
+                                <span className="relative">
+                                    {locale === 'en-AU' ? 'VIEW PROJECTS' : 'プロジェクトを見る'}
+                                    <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full underline-hover" />
+                                </span>
+
+                                <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                                    ➔
+                                </span>
+                            </div>
+                        </Link>
                     </motion.div>
                 </motion.div>
 

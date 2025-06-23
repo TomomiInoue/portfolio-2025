@@ -9,14 +9,23 @@ import { motion, useAnimation } from 'framer-motion';
 import type { Project } from '@/app/type/types';
 import { Icon } from '@iconify/react/dist/iconify.js';
 
-export const ProjectsPageComponent: React.FC = () => {
+interface ProjectsPageProps {
+    locale: 'en-AU' | 'ja';
+}
+
+export const ProjectsPageComponent = ({
+    locale,
+}: ProjectsPageProps) => {
+    console.log('ProjectsPageComponent rendered with locale:', locale);
     return (
         <section className="container mx-auto px-6 py-40">
-            <h2 className="text-[56px] font-bold mb-12">Recent Projects</h2>
+            <h2 className="text-[56px] font-bold mb-12">
+                {locale === 'ja' ? 'プロジェクト' : 'Recent Projects'}
+            </h2>
 
             <div className="space-y-24 mt-14 relative">
                 {projects.map((project: Project) => (
-                    <ProjectRow key={project.name} project={project} />
+                    <ProjectRow key={project.name} project={project} locale={locale} />
                 ))}
             </div>
         </section>
@@ -24,10 +33,11 @@ export const ProjectsPageComponent: React.FC = () => {
 };
 
 type ProjectRowProps = {
+    locale: 'en-AU' | 'ja';
     project: Project;
 };
 
-const ProjectRow: React.FC<ProjectRowProps> = ({ project }) => {
+const ProjectRow: React.FC<ProjectRowProps> = ({ project, locale }) => {
     const controls = useAnimation();
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [hovering, setHovering] = useState<boolean>(false);
@@ -99,13 +109,16 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project }) => {
             </Link>
 
             {/* View Details Button */}
-            <div className="mt-6 z-10 relative items-center justify-end flex">
+            <div className="mt-6 z-10 relative items-center justify-end text-brown py-3 px-4 rounded-md font-semibold text-2xl transition-all duration-300 hover:scale-[1.02] flex">
                 <Link
                     href={`/projects/${project.slug}`}
-                    className="px-6 py-2 text-base hover:opacity-70 transition flex"
+                    className="px-6 py-2 text-xl font-semibold hover:opacity-70 transition flex"
                 >
-                    View Details
-                    <Icon icon="basil:arrow-up-solid" width="24" height="24" className='rotate-90' />
+                    <span className="relative">
+                        {locale === 'ja' ? '詳細を見る' : 'View Details'}
+                        <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full underline-hover" />
+                    </span>
+                    <Icon icon="basil:arrow-up-solid" width="24" height="24" className='rotate-90 className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1"' />
                 </Link>
             </div>
         </div>

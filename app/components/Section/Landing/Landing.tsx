@@ -21,10 +21,15 @@ const landingCopy: LandingCopyTypes = {
         description: ["💡 Headless CMS", "✍️ Easy Content Edits", "🌐 Multilingual Support"],
     },
     ja: {
-        landingCopy: ["バイリンガルで人間中心のウェブデザインでグローバルブランドを支援"],
-        headline: ["共感をもってデザインし、精密に構築",],
-        Subheadline: [""],
-        description: ["クライアントに完全なコンテンツ管理を提供する、バイリンガルのヘッドレスCMSウェブサイトを専門としています。"],
+        landingCopy: ["バイリンガル対応で、",
+            "世界に伝わるデザインを。"],
+        headline: ["シンプルで美しいデザインを、",
+            "多言語で世界へ届ける。",],
+        Subheadline: ["多言語サイトを、もっと直感的に。",
+            "使いやすさと、未来を見据えた設計で。"],
+        description: ["💡 ヘッドレスCMSで自由に更新",
+            "✍️ 編集はコード不要、すぐできる",
+            "🌐 英語も日本語もOKな多言語対応"],
     }
 };
 
@@ -70,7 +75,6 @@ export const LandingComponent = ({
 
     return (
         <div className="w-full overflow-x-hidden scroll-smooth">
-
             {/* Hero Section */}
             <div className="snap-start relative w-full h-screen overflow-hidden">
                 <NextImage
@@ -141,16 +145,14 @@ export const LandingComponent = ({
             />
 
             {/* About Section with scroll anchor */}
-            <div
-                id="about"
-                className="relative z-10 min-h-[120vh] bg-cream px-4 py-24"
-            >
+            <div id="about" className="relative z-10 -mt-24 pt-24 bg-primary">
+                <div className="absolute top-0 left-0 w-full h-24 z-20 pointer-events-none" />
+
                 <AboutIntro
                     locale={locale}
                     landingCopy={landingCopy}
                 />
             </div>
-
-        </div>
+        </div >
     );
 };

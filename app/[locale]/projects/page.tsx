@@ -1,10 +1,16 @@
 import { ProjectsPageComponent } from '@/app/components/Section/Projects/ProjectsPageComponent';
 import React from 'react';
 
-export default function Projects() {
+type Props = {
+    params: Promise<{ locale: 'en-AU' | 'ja' }>;
+};
+
+export default async function Projects({ params }: Props) {
+    const { locale } = await params;
+
     return (
         <>
-            <ProjectsPageComponent />
+            <ProjectsPageComponent locale={locale} />
         </>
     );
 }
