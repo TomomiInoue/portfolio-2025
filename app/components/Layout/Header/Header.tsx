@@ -8,9 +8,13 @@ import { cn } from "@/app/lib/utils"
 import { motion } from "framer-motion";
 import { navItems } from "@/app/constants/navItem"
 import { MobileHeader } from "./MobileHeader"
-import { LanguageSwitcher } from "../LanguageSwitch/LanguageSwitch"
+import { LanguageSwitcher } from "./LanguageSwitch/LanguageSwitch"
 
-export const Header = () => {
+interface HeaderProps {
+    locale: "en-AU" | "ja";
+}
+
+export const Header = ({ locale }: HeaderProps) => {
     const router = useRouter()
     const pathname = usePathname()
     const [isPageTop, setIsPageTop] = useState(false);
@@ -50,36 +54,41 @@ export const Header = () => {
                             isPageTop ? "hidden" : "flex"
                         ),
                         content: "w-full flex justify-between items-center",
-                        brand: "flex items-center gap-2",
+                        brand: "flex items-center gap-2 order-1",
                         item: "text-secondary text-lg font-bold cursor-pointer hover:opacity-70",
                     }
                     }
                 >
-                    <NavbarBrand>
+                    <NavbarBrand >
                         <Link href="/">
                             <NextImage src="/logo/flow-logo.png" alt="Tomomi Inoue" width={68} height={68} />
                         </Link>
                     </NavbarBrand>
-                    <NavbarContent justify="end" className="flex gap-6">
-                        {navItems.map((item) => {
+                    <NavbarContent justify="end" className="flex gap-6 justify-end items-center order-2">
+                        {navItems[locale === "en-AU" ? "en" : "ja"].map((item) => {
                             const isHome = item.href === "/";
                             const isActive = isHome
                                 ? pathname === "/"
                                 : pathname.startsWith(item.href);
                             return (
                                 <NavbarItem key={item.label} onClick={() => router.push(item.href)}
-                                    className={isActive ? "text-orange" : "text-secondary"}
-                                >{item.label}</NavbarItem>
+                                    className={cn(
+                                        "text-secondary text-lg  cursor-pointer hover:opacity-70",
+                                        isActive ? "text-orange font-bold" : "font-medium"
+                                    )}
+                                >
+                                    {item.label}
+                                </NavbarItem>
                             )
                         })}
-                    </NavbarContent>
-                    <NavbarContent className="flex items-center gap-4">
-                        <LanguageSwitcher />
                     </NavbarContent>
                 </Navbar>
             </motion.div>
             <div className="md:hidden">
-                <MobileHeader />
+                <MobileHeader locale={locale} />
+            </div>
+            <div className="fixed bg-transparent z-50 right-5 top-6">
+                <LanguageSwitcher locale={locale} />
             </div>
         </>
     )

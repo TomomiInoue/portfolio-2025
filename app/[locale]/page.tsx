@@ -2,7 +2,7 @@ import React from 'react';
 import { LandingComponent } from '../components/Section/Landing/Landing';
 
 type Props = {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: "en-AU" | "ja" }>;
 };
 
 export default async function Home({ params }: Props) {

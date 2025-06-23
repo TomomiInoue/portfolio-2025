@@ -1,8 +1,14 @@
 'use client';
 
+import { LandingCopyTypes } from '@/app/type/types';
 import { motion } from 'framer-motion';
 import NextImage from 'next/image';
 import React from 'react';
+
+interface AboutIntroProps {
+    locale: string;
+    landingCopy: LandingCopyTypes;
+}
 
 const containerVariants = {
     hidden: {},
@@ -26,7 +32,10 @@ const itemVariants = {
     },
 };
 
-export const AboutIntro = () => {
+export const AboutIntro = ({
+    locale,
+    landingCopy,
+}: AboutIntroProps) => {
     return (
         <div className="w-full h-full lg:min-h-screen flex items-center justify-center py-10 lg:py-[80px]">
             <div className="container h-full px-6 lg:px-0">
@@ -54,12 +63,32 @@ export const AboutIntro = () => {
                         className="flex flex-col w-full lg:w-[80%] gap-5 lg:-mt-10"
                         variants={itemVariants}
                     >
-                        <h5 className="text-heading03 lg:text-heading01 text-accent">
-                            Designing with Empathy, Building with Precision
-                        </h5>
-                        <p className="text-body04 lg:text-lg font-normal font-heebo text-secondary">
-                            As a creative web developer and UX designer, I transform ideas into seamless digital experiences. Empathy guides my designs, problem-solving sharpens my code, and achieving client goals drives my passion for innovation and excellence.
-                        </p>
+                        <h6 className="text-[20px] lg:text-heading03  text-secondary">
+                            {locale === 'en-AU'
+                                ? landingCopy.en.Subheadline.map((title, index) => (
+                                    <div key={index}>
+                                        {title}
+                                        {/* {index < landingCopy.en.Subheadline.length - 1 ? ' | ' : ''} */}
+                                    </div>
+                                ))
+                                : landingCopy.ja.Subheadline.map((title, index) => (
+                                    <div key={index}>
+                                        {title}
+                                        {/* {index < landingCopy.ja.Subheadline.length - 1 ? ' | ' : ''} */}
+                                    </div>
+                                ))
+                            }
+                        </h6>
+                        <div className="flex gap-2">
+                            {locale === 'en-AU'
+                                ? landingCopy.en.description.map((line, index) => (
+                                    <p key={index} className="text-sm font-light font-heebo text-secondary">
+                                        {line}
+                                        {index < landingCopy.en.description.length - 1 ? ' / ' : ''}
+                                    </p>
+                                ))
+                                : landingCopy.ja.description}
+                        </div>
                     </motion.div>
                 </motion.div>
 

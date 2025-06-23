@@ -4,7 +4,10 @@ import Link from 'next/link';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { navItems } from '@/app/constants/navItem';
 
-export const Footer = () => {
+interface FooterProps {
+    locale: 'en-AU' | 'ja';
+}
+export const Footer = ({ locale }: FooterProps) => {
 
     return (
         <footer className="bg-brown text-cream py-6 lg:py-10">
@@ -18,11 +21,12 @@ export const Footer = () => {
                     <Link href="/">
                         <NextImage src="/logo/flow-logo-light.png" alt="Tomomi Inoue" width={78} height={78} />
                     </Link>
-                    {navItems.map((item, index) => (
-                        <Link key={index} href={item.href} passHref>
+                    {navItems[locale === "en-AU" ? "en" : "ja"].map((item) => (
+                        <Link key={item.href} href={item.href} passHref>
                             <p className='text-body04 font-medium cursor-pointer hover:text-cream'>{item.label}</p>
                         </Link>
                     ))}
+
                 </div>
                 <div className='col-span-2 flex flex-col lg:flex-row gap-4 items-end justify-end'>
                     <div className='flex gap-[10px]'>

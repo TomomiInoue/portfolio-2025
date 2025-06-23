@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createInstance, TFunction } from "i18next";
 import { initReactI18next } from "react-i18next/initReactI18next";
-import resourcesToBackend from "i18next-resources-to-backend";
+// import resourcesToBackend from "i18next-resources-to-backend";
 import { i18nConfig } from "./i18n";
 import { Locale } from "@/app/type/types";
 
@@ -14,14 +14,14 @@ async function initTranslations(
 
   i18nInstance.use(initReactI18next);
 
-  if (!options?.resources) {
-    i18nInstance.use(
-      resourcesToBackend(
-        (language: string, namespace: string) =>
-          import(`./translations/${language}/${namespace}.json`)
-      )
-    );
-  }
+  // if (!options?.resources) {
+  //   i18nInstance.use(
+  //     resourcesToBackend(
+  //       (language: string, namespace: string) =>
+  //         import(`./translations/${language}/${namespace}.json`)
+  //     )
+  //   );
+  // }
 
   await i18nInstance.init({
     lng: locale,

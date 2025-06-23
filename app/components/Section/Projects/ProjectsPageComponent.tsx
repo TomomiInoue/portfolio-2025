@@ -69,9 +69,10 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project }) => {
             </div>
 
             {/* Images Row */}
-            <div className="relative z-10 flex flex-col md:flex-row gap-6 items-baseline w-1/2">
+
+            <Link className="relative z-10 flex flex-col md:flex-row gap-6 items-baseline w-1/2" href={`/projects/${project.slug}`}>
                 {/* Mobile Image */}
-                <div className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg">
+                <div className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg " >
                     {project.images?.mobile && (
                         <Image
                             src={project.images.mobile}
@@ -84,7 +85,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project }) => {
                 </div>
 
                 {/* Desktop Image */}
-                <div className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg">
+                <div className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg" >
                     {project.images?.desktop && (
                         <Image
                             src={project.images.desktop}
@@ -95,7 +96,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project }) => {
                         />
                     )}
                 </div>
-            </div>
+            </Link>
 
             {/* View Details Button */}
             <div className="mt-6 z-10 relative items-center justify-end flex">

@@ -4,9 +4,15 @@ import NextImage from "next/image";
 import { navItems } from "@/app/constants/navItem";
 import { usePathname } from "next/navigation";
 import { cn } from "@/app/lib/utils";
-import { LanguageSwitcher } from "../LanguageSwitch/LanguageSwitch";
+import { LanguageSwitcher } from "./LanguageSwitch/LanguageSwitch";
 
-export const MobileHeader = () => {
+interface MobileHeaderProps {
+  locale: "en-AU" | "ja";
+}
+
+export const MobileHeader = ({
+  locale
+}: MobileHeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const pathname = usePathname();
   return (
@@ -26,7 +32,7 @@ export const MobileHeader = () => {
 
 
       <NavbarMenu>
-        {navItems.map((item, index) => (
+        {navItems[locale === "en-AU" ? "en" : "ja"].map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               href={item.href}
@@ -41,7 +47,7 @@ export const MobileHeader = () => {
         ))}
       </NavbarMenu>
       <NavbarContent className="justify-end">
-        <LanguageSwitcher />
+        <LanguageSwitcher locale={locale} />
       </NavbarContent>
     </Navbar>
   );

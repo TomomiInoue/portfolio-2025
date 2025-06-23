@@ -52,3 +52,18 @@ export type I18NConfig = {
   defaultLocale: string;
   prefixDefault: boolean;
 };
+
+export type LandingCopyTypes = {
+  en: {
+    landingCopy: string[];
+    headline: string[];
+    Subheadline: string[];
+    description: string[];
+  };
+  ja: {
+    landingCopy: string[];
+    headline: string[];
+    Subheadline: string[];
+    description: string[];
+  };
+};

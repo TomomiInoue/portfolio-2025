@@ -5,7 +5,6 @@ import { NextUIProvider } from "@nextui-org/react";
 import { Header } from "../components/Layout/Header/Header";
 import { Footer } from "../components/Layout/Footer/Footer";
 import { notFound } from "next/navigation";
-import { getDirection } from "../lib/utils";
 import { Locale } from "../type/types";
 import { serverSideTranslation } from "../lib/i18n";
 import I18NProvider from "../components/Layout/i18n/i18nProvider";
@@ -21,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     console.log("Invalid locale:", locale);
     notFound();
   }
-  console.log(locale, "params.locale in generateMetadata");
+
   const isJa = locale === "ja";
 
   return {
@@ -57,22 +56,19 @@ export default async function LocaleLayout({
   params: { locale: Locale };
 }) {
   const { locale } = await params;
-  console.log(locale, "locale in LocaleLayout");
-  // if (!locales.includes(locale)) notFound();
+
+  if (!locales.includes(locale)) notFound();
 
   const ns = ["home"];
   const { resources } = await serverSideTranslation(locale, ns);
 
-  // decide text direction
-  const dir = getDirection(locale);
-
   return (
-    <div dir={dir}>
+    <div >
       <I18NProvider locale={locale} namespaces={ns} resources={resources}>
         <NextUIProvider>
-          <Header />
+          <Header locale={locale} />
           {children}
-          <Footer />
+          <Footer locale={locale} />
         </NextUIProvider>
       </I18NProvider>
     </div>

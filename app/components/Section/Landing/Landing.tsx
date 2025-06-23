@@ -4,13 +4,35 @@ import React from "react";
 import NextImage from "next/image";
 import * as motion from "motion/react-client"
 import { AboutIntro } from "./AboutIntro";
+import { LandingCopyTypes } from "@/app/type/types";
+import { Banner } from "./Banner";
+
+const landingCopy: LandingCopyTypes = {
+    en: {
+        landingCopy:
+            [
+                "Empowering Global Brands with Bilingual,",
+                "Human - Centered Web Design"
+            ],
+        headline: ["Designing with Empathy,", "Building with Precision"],
+        Subheadline: ["Intuitive, multilingual websites,",
+            "built with clean UX and scalable code.",
+        ],
+        description: ["💡 Headless CMS", "✍️ Easy Content Edits", "🌐 Multilingual Support"],
+    },
+    ja: {
+        landingCopy: ["バイリンガルで人間中心のウェブデザインでグローバルブランドを支援"],
+        headline: ["共感をもってデザインし、精密に構築",],
+        Subheadline: [""],
+        description: ["クライアントに完全なコンテンツ管理を提供する、バイリンガルのヘッドレスCMSウェブサイトを専門としています。"],
+    }
+};
 
 export const LandingComponent = ({
     locale
 }: {
-    locale: string;
+    locale: "en-AU" | "ja";
 }) => {
-    console.log("LandingComponent locale:", locale);
     const containerVariants = {
         hidden: {},
         show: {
@@ -47,9 +69,10 @@ export const LandingComponent = ({
     };
 
     return (
-        <>
+        <div className="w-full overflow-x-hidden scroll-smooth">
+
             {/* Hero Section */}
-            <div className="relative w-full h-screen overflow-hidden">
+            <div className="snap-start relative w-full h-screen overflow-hidden">
                 <NextImage
                     src="/images/cheater-five.jpg"
                     alt="Tomomi Inoue"
@@ -78,16 +101,18 @@ export const LandingComponent = ({
                         >
                             {
                                 locale === "ja"
-                                    ? `フロントエンド開発とUXデザインを専門とする、Tomomi Inoueのポートフォリオサイトへようこそ。`
-                                    : "Welcome to the portfolio site of Tomomi Inoue, specializing in frontend development and UX design."
+                                    ? landingCopy.ja.landingCopy.map((line, index) => (
+                                        <div key={index} className="flex flex-col">
+                                            {line}
+                                        </div>
+                                    ))
+                                    : landingCopy.en.landingCopy.map((line, index) => (
+                                        <div key={index} className="flex flex-col">
+                                            {line}
+                                        </div>
+                                    ))
                             }
-                            {/* Freelance Web Developer & UX Designer */}
-                        </motion.div>
-                        <motion.div
-                            className="text-body03 lg:text-body01 font-medium text-cream font-heebo"
-                            variants={itemVariants}
-                        >
-                            Passionate Surfer, Yogini and World traveler
+
                         </motion.div>
                     </motion.div>
                 </div >
@@ -95,22 +120,37 @@ export const LandingComponent = ({
                 {/* Scroll Down Arrow */}
                 <div className="absolute bottom-6 w-full flex flex-col text-center justify-center z-10">
                     <a
-                        className="animate-bounce text-brown text-6xl"
+                        className="animate-bounce text-main text-6xl"
                         aria-label="Scroll to About Section"
                         onClick={handleScroll}
                         href="#about"
                     >
                         ↓
                     </a>
-                    scroll down
+                    {/* scroll down */}
+                    <p className="text-main text-body04 font-medium mt-2">
+                        {locale === "ja" ? "スクロールダウン" : "Scroll Down"}
+                    </p>
                 </div>
             </div >
+            {/* Banner Section */}
+
+            <Banner
+                locale={locale}
+                landingCopy={landingCopy}
+            />
 
             {/* About Section with scroll anchor */}
-            < div id="about" >
-                <AboutIntro />
-            </div >
-            {/* <AboutIntro /> */}
-        </>
+            <div
+                id="about"
+                className="relative z-10 min-h-[120vh] bg-cream px-4 py-24"
+            >
+                <AboutIntro
+                    locale={locale}
+                    landingCopy={landingCopy}
+                />
+            </div>
+
+        </div>
     );
 };
