@@ -17,7 +17,6 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!locales.includes(locale)) {
-    console.log("Invalid locale:", locale);
     notFound();
   }
 
@@ -63,7 +62,7 @@ export default async function LocaleLayout({
   const { resources } = await serverSideTranslation(locale, ns);
 
   return (
-    <div >
+    <div>
       <I18NProvider locale={locale} namespaces={ns} resources={resources}>
         <NextUIProvider>
           <Header locale={locale} />

@@ -22,14 +22,14 @@ export const WorkTogether = ({ locale }:
 ) => {
     // Let’s Work Together section navigate to my project page
     return (
-        <div className="w-full min-h-screen flex items-center justify-center py-10 lg:py-[80px] bg-brown/5">
+        <div className="w-full min-h-[600px] flex items-center justify-center py-10 lg:py-[80px] bg-cream">
             <div className="container h-full px-6 lg:px-0 text-center">
                 <h4 className="text-heading02 lg:text-heading01 font-semibold text-accent mb-6">
                     {locale === "ja"
                         ? WorkTogetherCopy.ja.title
                         : WorkTogetherCopy.en.title}
                 </h4>
-                <p className={cn("text-body03 lg:text-body02 font-regular text-cream font-heebo mb-8  mx-auto",
+                <p className={cn("text-body03 lg:text-body02 font-regular text-brown font-heebo mb-8  mx-auto",
                     locale === "ja" ? "max-w-full" : "max-w-[800px]"
                 )}>
                     {locale === "ja"
@@ -41,7 +41,7 @@ export const WorkTogether = ({ locale }:
                     size='md'
                     //href change by locale
                     href={locale === "ja" ? "/ja/connect" : "/connect"}
-                    className="inline-block px-8 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors font-heebo"
+                    className="inline-block px-8 py-3 bg-accent text-cream rounded-lg hover:bg-accent/90 transition-colors font-heebo"
                 >
                     {locale === "ja"
                         ? WorkTogetherCopy.ja.buttonText
