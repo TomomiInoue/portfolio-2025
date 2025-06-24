@@ -127,7 +127,7 @@ export const LandingComponent = ({
                         className="animate-bounce text-main text-6xl"
                         aria-label="Scroll to About Section"
                         onClick={handleScroll}
-                        href="#about"
+                        href="#banner"
                     >
                         ↓
                     </a>
@@ -138,12 +138,12 @@ export const LandingComponent = ({
                 </div>
             </div >
             {/* Banner Section */}
-
-            <Banner
-                locale={locale}
-                landingCopy={landingCopy}
-            />
-
+            <div id="banner">
+                <Banner
+                    locale={locale}
+                    landingCopy={landingCopy}
+                />
+            </div>
             {/* About Section with scroll anchor */}
             <div id="about" className="relative z-10 -mt-24 pt-24 bg-primary">
                 <div className="absolute top-0 left-0 w-full h-24 z-20 pointer-events-none" />

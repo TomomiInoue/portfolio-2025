@@ -87,7 +87,7 @@ export const Header = ({ locale }: HeaderProps) => {
             <div className="md:hidden">
                 <MobileHeader locale={locale} />
             </div>
-            <div className="fixed bg-transparent z-50 right-5 top-6">
+            <div className="fixed bg-transparent z-50 right-5 top-6 hidden md:flex items-center justify-end">
                 <LanguageSwitcher locale={locale} />
             </div>
         </>
