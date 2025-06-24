@@ -9,6 +9,7 @@ import { motion, useAnimation } from 'framer-motion';
 import type { Project } from '@/app/type/types';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { WorkTogether } from './WorkTogether';
+import { cn } from '@nextui-org/react';
 
 interface ProjectsPageProps {
     locale: 'en-AU' | 'ja';
@@ -21,8 +22,12 @@ export const ProjectsPageComponent = ({
     return (
         <>
             <section className="container mx-auto px-6 py-40">
-                <h2 className="text-[56px] font-bold mb-12">
-                    {locale === 'ja' ? 'プロジェクト' : 'Recent Projects'}
+                <h2 className={cn("mb-6 leading-tight",
+                    locale === "ja" ? "text-accent text-display05 lg:text-display05 " : "text-accent text-display05 lg:text-display02 ",
+                )}>
+                    <span className="text-accent">
+                        {locale === 'ja' ? 'プロジェクト' : 'Recent Projects'}
+                    </span>
                 </h2>
 
                 <div className="space-y-24 mt-14 relative">
@@ -83,8 +88,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project, locale }) => {
             </div>
 
             {/* Images Row */}
-
-            <Link className="relative z-10 flex flex-col md:flex-row gap-6 items-baseline w-1/2" href={`/projects/${project.slug}`}>
+            <Link className="relative z-10 flex flex-row gap-6 items-baseline w-full md:w-1/2" href={`/projects/${project.slug}`}>
                 {/* Mobile Image */}
                 <div className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg " >
                     {project.images?.mobile && (
@@ -116,7 +120,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project, locale }) => {
             <div className="mt-6 z-10 relative items-center justify-end text-brown py-3 px-4 rounded-md font-semibold text-2xl transition-all duration-300 hover:scale-[1.02] flex">
                 <Link
                     href={`/projects/${project.slug}`}
-                    className="px-6 py-2 text-xl font-semibold hover:opacity-70 transition flex"
+                    className="px-6 py-2 text-xl font-semibold hover:opacity-70 transition flex items-center"
                 >
                     <span className="relative">
                         {locale === 'ja' ? '詳細を見る' : 'View Details'}

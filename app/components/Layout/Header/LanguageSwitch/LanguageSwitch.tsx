@@ -30,10 +30,10 @@ export function LanguageSwitcher({
         <div className="flex items-center space-x-2">
             <Button
                 size="sm"
-                // color="primary"
-                variant={locale === "en-AU" ? "solid" : "light"}
+                color="primary"
+                // variant={locale === "en-AU" ? "solid" : "light"}
                 onClick={() => handleChange("en-AU")}
-                className={cn("text-sm text-main mr-2", locale === "en-AU" ? "font-semibold" : "font-normal")}
+                className={cn("text-sm text-main mr-2", locale === "en-AU" ? "font-semibold bg-bone" : "font-normal bg-transparent")}
             >
                 EN
             </Button>
@@ -42,7 +42,7 @@ export function LanguageSwitcher({
                 size="sm"
                 variant={locale === "ja" ? "solid" : "light"}
                 onClick={() => handleChange("ja")}
-                className={cn("text-sm text-main", locale === "ja" ? "font-semibold" : "font-normal")}
+                className={cn("text-sm text-main", locale === "ja" ? "font-semibold bg-bone" : "font-normal bg-transparent")}
             >
                 日本語
             </Button>

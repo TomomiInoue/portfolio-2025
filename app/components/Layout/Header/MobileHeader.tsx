@@ -23,13 +23,15 @@ export const MobileHeader = ({
             <NextImage src="/logo/flow-logo.png" alt="Tomomi Inoue" width={48} height={48} />
           </Link>
         </NavbarBrand>
+        <NavbarContent>
+          <LanguageSwitcher locale={locale} />
+        </NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="justify-self-end"
 
         />
       </NavbarContent>
-
 
       <NavbarMenu>
         {navItems[locale === "en-AU" ? "en" : "ja"].map((item, index) => (
@@ -46,9 +48,6 @@ export const MobileHeader = ({
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
-      <NavbarContent className="justify-end">
-        <LanguageSwitcher locale={locale} />
-      </NavbarContent>
     </Navbar>
   );
 }

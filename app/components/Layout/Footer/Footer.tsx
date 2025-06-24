@@ -3,6 +3,7 @@ import NextImage from 'next/image';
 import Link from 'next/link';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { navItems } from '@/app/constants/navItem';
+import { cn } from '@nextui-org/react';
 
 interface FooterProps {
     locale: 'en-AU' | 'ja';
@@ -17,13 +18,13 @@ export const Footer = ({ locale }: FooterProps) => {
                 <span>Development</span>
             </h2>
             <div className="container px-6 lg:px-0 mx-auto grid grid-cols-2 gap-4 md:grid-cols-4 justify-between items-center">
-                <div className='col-span-2 flex gap-6 items-center'>
+                <div className={cn('col-span-2 flex gap-6 items-center')}>
                     <Link href="/">
                         <NextImage src="/logo/flow-logo-light.png" alt="Tomomi Inoue" width={78} height={78} />
                     </Link>
                     {navItems[locale === "en-AU" ? "en" : "ja"].map((item) => (
                         <Link key={item.href} href={item.href} passHref>
-                            <p className='text-body04 font-medium cursor-pointer hover:text-cream'>{item.label}</p>
+                            <p className='text-sm md:text-body04 font-medium cursor-pointer hover:text-cream'>{item.label}</p>
                         </Link>
                     ))}
 

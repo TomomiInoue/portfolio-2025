@@ -78,7 +78,7 @@ export const AboutIntro = ({
                                 ))
                             }
                         </h6>
-                        <div className={cn("flex gap-1 text-base font-light text-secondary", locale === "ja" ? "flex-col" : "flex-row")}>
+                        <div className={cn("flex gap-1 text-base font-light text-secondary", locale === "ja" ? "flex-col" : "flex-col xl:flex-row")}>
                             {locale === 'en-AU'
                                 ? landingCopy.en.description.map((line, index) => (
                                     <h5 key={index}>
@@ -95,7 +95,7 @@ export const AboutIntro = ({
                             }
                         </div>
                         <Link href="/projects" className="self-end mt-5 group cursor-pointer">
-                            <div className="relative flex items-center justify-center text-brown py-3 px-4 rounded-md font-semibold text-2xl transition-all duration-300 hover:scale-[1.02]">
+                            <div className="relative flex items-center justify-center text-brown py-3 px-4 rounded-md font-semibold text-[18px] md:text-2xl transition-all duration-300 hover:scale-[1.02]">
                                 <span className="relative">
                                     {locale === 'en-AU' ? 'VIEW PROJECTS' : 'プロジェクトを見る'}
                                     <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full underline-hover" />

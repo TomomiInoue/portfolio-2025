@@ -112,7 +112,6 @@ export const AboutComponent = ({ locale }: AboutProps) => {
                             },
                         }}
                     />
-
                     <SectionDivider label="Mindful Living" />
                     <ImageAndTextSideBySide
                         locale={locale}

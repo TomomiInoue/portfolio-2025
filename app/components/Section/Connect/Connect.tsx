@@ -87,7 +87,7 @@ export const ConnectComponent = ({ locale }: ConnectProps) => {
     <div className="min-h-screen flex flex-col md:flex-row items-center justify-center relative">
       <div className="container grid grid-cols-1 lg:grid-cols-5 gap-10 px-6 lg:px-0">
         <div className="col-span-2 flex flex-col justify-center items-start">
-          <h4 className="text-heading02 lg:text-heading01 font-semibold text-accent">
+          <h4 className="text-heading02 lg:text-heading01 font-semibold text-accent mb-6 md:mb-10">
             {locale === "ja" ? ConnectCopy.ja.title : ConnectCopy.en.title}
           </h4>
 
@@ -115,7 +115,7 @@ export const ConnectComponent = ({ locale }: ConnectProps) => {
             </Link>
           </div>
 
-          <p className="text-body04 font-heebo text-secondary mb-2">
+          <p className="text-body04 font-heebo text-secondary mb-2 mt-6 md:mt-10">
             {locale === "ja" ? ConnectCopy.ja.ctx : ConnectCopy.en.ctx}
           </p>
           <button

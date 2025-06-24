@@ -89,7 +89,7 @@ export const ProjectDetailComponent = ({
                         </div>
 
                         <div className="flex mt-[3rem] gap-[1.5rem] lg:gap-[9rem] lg:mt-[9rem] flex-wrap">
-                            <div className="w-full max-w-[600px] h-[600px]">
+                            <div className="w-full max-w-[600px] h-full md:h-[600px] ">
                                 <Image
                                     src={project.images?.mobile || ""}
                                     alt={project.images?.alt || "work image mobile"}
@@ -104,8 +104,7 @@ export const ProjectDetailComponent = ({
                     <aside className="relative w-full h-[4rem] lg:h-full">
                         <div className="absolute bottom-0 right-0 mt-[2rem] lg:mt-0 w-[200px]">
                             <Link href="/projects" className="flex items-center gap-2 text-base font-semibold  hover:opacity-70 transition">
-                                <Icon icon="basil:arrow-left-solid" width="24" height="24" />
-                                View All Projects
+                                ← View All Projects
                             </Link>
                         </div>
                     </aside>

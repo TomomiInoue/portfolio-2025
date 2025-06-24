@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, cn } from "@nextui-org/react"
+import Link from "next/link";
 
 interface WorkTogetherProps {
     locale: "en-AU" | "ja";
@@ -20,9 +21,8 @@ const WorkTogetherCopy = {
 export const WorkTogether = ({ locale }:
     WorkTogetherProps
 ) => {
-    // Let’s Work Together section navigate to my project page
     return (
-        <div className="w-full min-h-[600px] flex items-center justify-center py-10 lg:py-[80px] bg-cream">
+        <div className="w-full min-h-[360px] md:min-h-[600px] flex items-center justify-center py-10 lg:py-[80px] bg-cream">
             <div className="container h-full px-6 lg:px-0 text-center">
                 <h4 className="text-heading02 lg:text-heading01 font-semibold text-accent mb-6">
                     {locale === "ja"
@@ -39,13 +39,13 @@ export const WorkTogether = ({ locale }:
                 <Button
                     variant='solid'
                     size='md'
-                    //href change by locale
-                    href={locale === "ja" ? "/ja/connect" : "/connect"}
                     className="inline-block px-8 py-3 bg-accent text-cream rounded-lg hover:bg-accent/90 transition-colors font-heebo"
                 >
-                    {locale === "ja"
-                        ? WorkTogetherCopy.ja.buttonText
-                        : WorkTogetherCopy.en.buttonText}
+                    <Link href={locale === "ja" ? "/ja/connect" : "/connect"} className="text-inherit">
+                        {locale === "ja"
+                            ? WorkTogetherCopy.ja.buttonText
+                            : WorkTogetherCopy.en.buttonText}
+                    </Link>
                 </Button>
             </div>
         </div>

@@ -58,7 +58,7 @@ export const ImageAndTextSideBySide = ({ item, screenSize, locale }: Props) => {
                 }}
                 className={cn(
                     "relative block col-span-3",
-                    item.isImageRight ? "order-2" : "order-1"
+                    item.isImageRight ? "order-1 md:order-2" : "md:order-1"
                 )}
             >
                 <NextImage
@@ -75,7 +75,7 @@ export const ImageAndTextSideBySide = ({ item, screenSize, locale }: Props) => {
             <motion.div
                 className={cn(
                     "flex flex-col max-w-[560px]",
-                    item.isImageRight ? "order-1" : "order-2"
+                    item.isImageRight ? "order-2 md:order-1" : "order-2"
                 )}
                 variants={textVariants}
             >
@@ -88,7 +88,7 @@ export const ImageAndTextSideBySide = ({ item, screenSize, locale }: Props) => {
                         : item.text.en
                     }
                 </p>
-            </motion.div>s
+            </motion.div>
         </motion.div>
 
     );
