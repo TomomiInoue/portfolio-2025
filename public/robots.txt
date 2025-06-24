@@ -1,3 +1,6 @@
+# *
 User-agent: *
 Allow: /
-Sitemap: https://www.flowdesigncode.com/sitemap.xml
+
+# Host
+Host: https://www.flowdesigncode.com
