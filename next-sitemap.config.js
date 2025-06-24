@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: "https://flowdesigncode.com",
+    siteUrl: "https://www.flowdesigncode.com", // ← your live site
     generateRobotsTxt: true,
     generateIndexSitemap: false,
     changefreq: 'monthly',

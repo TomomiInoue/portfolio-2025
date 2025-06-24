@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Flow Design Code",
     description: "UX design and frontend development studio...",
-    url: "https://flowdesigncode.com/",
+    url: "https://www.flowdesigncode.com",
     siteName: "Flow Design Code",
     images: [
       {

@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://flowdesigncode.com/sitemap.xml
+Sitemap: https://www.flowdesigncode.com/sitemap.xml
