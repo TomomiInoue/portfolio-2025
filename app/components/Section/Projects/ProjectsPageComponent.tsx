@@ -8,6 +8,7 @@ import { motion, useAnimation } from 'framer-motion';
 
 import type { Project } from '@/app/type/types';
 import { Icon } from '@iconify/react/dist/iconify.js';
+import { WorkTogether } from './WorkTogether';
 
 interface ProjectsPageProps {
     locale: 'en-AU' | 'ja';
@@ -18,17 +19,20 @@ export const ProjectsPageComponent = ({
 }: ProjectsPageProps) => {
     console.log('ProjectsPageComponent rendered with locale:', locale);
     return (
-        <section className="container mx-auto px-6 py-40">
-            <h2 className="text-[56px] font-bold mb-12">
-                {locale === 'ja' ? 'プロジェクト' : 'Recent Projects'}
-            </h2>
+        <>
+            <section className="container mx-auto px-6 py-40">
+                <h2 className="text-[56px] font-bold mb-12">
+                    {locale === 'ja' ? 'プロジェクト' : 'Recent Projects'}
+                </h2>
 
-            <div className="space-y-24 mt-14 relative">
-                {projects.map((project: Project) => (
-                    <ProjectRow key={project.name} project={project} locale={locale} />
-                ))}
-            </div>
-        </section>
+                <div className="space-y-24 mt-14 relative">
+                    {projects.map((project: Project) => (
+                        <ProjectRow key={project.name} project={project} locale={locale} />
+                    ))}
+                </div>
+            </section>
+            <WorkTogether locale={locale} />
+        </>
     );
 };
 
@@ -116,11 +120,12 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project, locale }) => {
                 >
                     <span className="relative">
                         {locale === 'ja' ? '詳細を見る' : 'View Details'}
-                        <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full underline-hover" />
+                        <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full underline-hover text-brown" />
                     </span>
                     <Icon icon="basil:arrow-up-solid" width="24" height="24" className='rotate-90 className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1"' />
                 </Link>
             </div>
+
         </div>
     );
 };

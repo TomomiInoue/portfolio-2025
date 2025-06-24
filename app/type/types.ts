@@ -1,6 +1,12 @@
 export type ImageAndTextSideBySiteType = {
-  title: string;
-  text: string;
+  title: {
+    en: string[];
+    ja: string[];
+  };
+  text: {
+    en: string;
+    ja: string;
+  };
   image: {
     src: string;
     alt: string;

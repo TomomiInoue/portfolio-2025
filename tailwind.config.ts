@@ -6,7 +6,6 @@ const extendedTheme = {
     secondary: "#4E3B31",
     accent: "#FF6F61",
     bone: "#D9CFBD",
-    // cream: "#F1F3E6",
     cream: "#FFFCF5",
     orange: "#FF6F61",
     brown: "#4E3B31",
