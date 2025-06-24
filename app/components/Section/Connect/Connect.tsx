@@ -27,10 +27,61 @@ const ConnectCopy = {
 
 export const ConnectComponent = ({ locale }: ConnectProps) => {
   const [showForm, setShowForm] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleToggleForm = () => {
     setShowForm(prev => !prev);
   };
+
+  //handle from submission, use logic from /api/contact.ts
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+    data["bot-field"] = ""; // Honeypot field
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      await response.json();
+      setShowForm(false);
+      setIsSubmitting(false);
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setShowForm(false);
+      setIsSubmitting(false);
+    }
+  };
+
+  if (submitted) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="bg-cream p-6 rounded-lg shadow-lg text-center">
+          <h4 className="text-heading03 font-semibold text-brown mb-4">
+            {locale === "ja" ? "メッセージを送信しました！" : "Message Sent!"}
+          </h4>
+          <p className="text-body04 text-secondary mb-4">
+            {locale === "ja" ? "ありがとうございます！できるだけ早くお返事します。" : "Thank you! I will get back to you as soon as possible."}
+          </p>
+          <Link href="/" className="text-accent hover:underline">
+            {locale === "ja" ? "ホームに戻る" : "Back to Home"}
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row items-center justify-center relative">
@@ -114,7 +165,7 @@ export const ConnectComponent = ({ locale }: ConnectProps) => {
               </h4>
               <form
                 method="POST"
-                action="/api/contact" // make sure you set this route
+                onSubmit={handleSubmit}
                 className="flex flex-col gap-4"
               >
                 <input type="text" name="name" placeholder={
@@ -134,7 +185,14 @@ export const ConnectComponent = ({ locale }: ConnectProps) => {
                   type="submit"
                   className="bg-accent text-white py-2 rounded-md hover:bg-accent/90 transition"
                 >
-                  {locale === "ja" ? ConnectCopy.ja.buttonText : ConnectCopy.en.buttonText}
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center">
+                      <Icon icon="lucide:loader" className="animate-spin mr-2" />
+                      {locale === "ja" ? "送信中..." : "Sending..."}
+                    </span>
+                  ) : (
+                    <span>{locale === "ja" ? ConnectCopy.ja.buttonText : ConnectCopy.en.buttonText}</span>
+                  )}
                 </button>
               </form>
             </motion.div>
