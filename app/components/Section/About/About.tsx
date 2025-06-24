@@ -75,7 +75,9 @@ export const AboutComponent = ({ locale }: AboutProps) => {
                             ? AboutCopy.ja.title.map((line, index) => (
                                 <span key={index} className="block text-accent">{line}</span>
                             ))
-                            : AboutCopy.en.title}
+                            :
+                            <span className='text-accent'>{AboutCopy.en.title}</span>
+                        }
                     </h1>
 
                     <div className="text-body03 lg:text-body02 font-regular text-cream font-heebo lg:w-1/3 pt-6">
@@ -159,7 +161,6 @@ export const AboutComponent = ({ locale }: AboutProps) => {
                     <Link
                         //href with locale
                         href={locale === "ja" ? "/ja/projects" : "/projects"}
-
                         aria-label="View my projects"
                         rel="noopener noreferrer"
                         className="text-accent font-semibold hover:underline ml-2"
