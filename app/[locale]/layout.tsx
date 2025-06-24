@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isJa = locale === "ja";
 
   return {
-    title: isJa ? "フロー・デザイン・コード | ポートフォリオ & ウェブ開発" : "Flow Design Code | Portfolio & Web Development",
+    title: isJa ? "フロー・デザイン・コード | ウェブデザインと開発" : "Flow Design Code | Web Design & Development",
     description: isJa
       ? "Flow Design Code は、Tomomi Inoue が率いるUXデザインとフロントエンド開発スタジオです。Next.js、React、TypeScript、Tailwind CSS を活用し、洗練された高性能なWeb体験を提供します。"
       : "Flow Design Code is a UX design and frontend development studio led by Tomomi Inoue. We build high-performance websites using Next.js, React, TypeScript, and Tailwind CSS.",
