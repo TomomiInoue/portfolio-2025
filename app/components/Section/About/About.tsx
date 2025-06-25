@@ -16,9 +16,11 @@ const AboutCopy = {
         description: "I blend creativity and determination in every aspect of my life, from crafting seamless digital experiences to embracing the power of the ocean, yoga, and mindful living",
     },
     ja: {
-        title: ["好きなことを大切に、心をこめてつくる",
+        title: ["好きなことを大切に、",
+            "心をこめてつくる",
             "サーフィン、ヨガ、デザイン。",
-            "私らしいリズムで生きながら、世界に届くものをつくっています。",
+            "私らしいリズムで生きながら、",
+            "世界に届くものを作っています。",
         ],
         description: [
             "私は、シームレスなデジタル体験の創造から、",
@@ -68,8 +70,8 @@ export const AboutComponent = ({ locale }: AboutProps) => {
                 />
 
                 <div className="relative lg:top-20 w-full max-w-[1280px] mx-auto h-full flex flex-col justify-end text-left lg:justify-center items-start pb-5 lg:pb-0 px-4">
-                    <h1 className={cn("text-accent mb-6 lg:w-[58%] leading-tight",
-                        locale === "ja" ? "text-display05 lg:text-display05" : "text-display05 lg:text-display02",
+                    <h1 className={cn("text-accent  lg:w-[58%] leading-tight",
+                        locale === "ja" ? "text-[24px] font-bold mb-0 lg:mb-6 lg:text-display05" : "text-display05 lg:text-display02 mb-6",
                     )}>
                         {locale === "ja"
                             ? AboutCopy.ja.title.map((line, index) => (
@@ -83,7 +85,7 @@ export const AboutComponent = ({ locale }: AboutProps) => {
                     <div className="text-body03 lg:text-body02 font-regular text-cream font-heebo lg:w-1/3 pt-6">
                         {locale === "ja"
                             ? AboutCopy.ja.description.map((line, index) => (
-                                <span key={index} className="block">{line}</span>
+                                <span key={index} className="hidden">{line}</span>
                             ))
                             : AboutCopy.en.description}
                     </div>
