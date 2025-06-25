@@ -24,12 +24,12 @@ export const Banner = ({ locale, landingCopy }: BannerProps) => {
     return (
         <section
             ref={ref}
-            className="relative h-screen overflow-hidden"
+            className="relative h-screen overflow-hidden="
         >
             <div className="sticky top-0 h-screen z-0 bg-cream flex items-center justify-center">
                 <motion.h1
                     style={{ opacity, scale }}
-                    className="text-3xl md:text-5xl font-semibold leading-loose text-accent font-playfairDisplay"
+                    className="text-2xl md:text-5xl font-semibold leading-loose text-accent font-playfairDisplay px-8 md:px-0"
                 >
                     {locale === "en-AU"
                         ? landingCopy.en.headline.map((title, index) => (
