@@ -29,6 +29,10 @@ const heebo = Heebo({
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
+            <head>
+                <link rel="alternate" href="https://www.flowdesigncode.com/en-AU" hrefLang="en-au" />
+                <link rel="alternate" href="https://www.flowdesigncode.com/ja" hrefLang="ja" />
+            </head>
             <body className={`${playfairDisplay.className} ${playfair.variable} ${heebo.variable}`} suppressHydrationWarning>
                 {children}</body>
         </html>
