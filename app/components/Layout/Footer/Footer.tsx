@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { navItems } from '@/app/constants/navItem';
 import { cn } from '@nextui-org/react';
+import { SocialLinks } from '@/app/constants/links';
 
 interface FooterProps {
     locale: 'en-AU' | 'ja';
@@ -33,13 +34,13 @@ export const Footer = ({ locale }: FooterProps) => {
                 </div>
                 <div className='col-span-2 flex flex-col lg:flex-row gap-4 items-end justify-end'>
                     <div className='flex gap-[10px]'>
-                        <Link href="https://www.linkedin.com/in/tomomi-inoue-730ab71ab/" target="_blank">
+                        <Link href={SocialLinks.linkedin} target="_blank">
                             <Icon icon="famicons:logo-linkedin" width="24" height="24" className="text-cream" />
                         </Link>
-                        <Link href="https://github.com/TomomiInoue" target="_blank">
+                        <Link href={SocialLinks.github} target="_blank">
                             <Icon icon="jam:github" width="24" height="24" className="text-cream" />
                         </Link>
-                        <Link href="https://www.instagram.com/flowdesigncode/profilecard/?igsh=cHU2ZjcwaWFyaXVs" target="_blank">
+                        <Link href={SocialLinks.instagram} target="_blank">
                             <Icon icon="streamline:instagram-solid" width="24" height="24" className="text-cream" />
                         </Link>
                     </div>

@@ -1,23 +1,3 @@
-// export const navItems = [
-
-//   {
-//     label: "Home",
-//     href: "/",
-//   },
-//   {
-//     label: "About",
-//     href: "/about",
-//   },
-//   {
-//     label: "Projects",
-//     href: "/projects",
-//   },
-//   {
-//     label: "Connect",
-//     href: "/connect",
-//   },
-// ];
-
 //create a navItems for english and japanese
 export const navItems = {
   en: [

@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import NextImage from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { SocialLinks } from "@/app/constants/links";
 
 interface ConnectProps {
   locale: "en-AU" | "ja";
@@ -104,13 +105,13 @@ export const ConnectComponent = ({ locale }: ConnectProps) => {
           </Link>
 
           <div className="flex gap-4 mt-4 mb-6">
-            <Link href="https://www.linkedin.com/in/tomomi-inoue-730ab71ab/" target="_blank">
+            <Link href={SocialLinks.linkedin} target="_blank">
               <Icon icon="famicons:logo-linkedin" width="24" height="24" className="text-secondary" />
             </Link>
-            <Link href="https://github.com/TomomiInoue" target="_blank">
+            <Link href={SocialLinks.github} target="_blank">
               <Icon icon="jam:github" width="24" height="24" className="text-secondary" />
             </Link>
-            <Link href="https://www.instagram.com/flowdesigncode/profilecard/?igsh=cHU2ZjcwaWFyaXVs" target="_blank">
+            <Link href={SocialLinks.instagram} target="_blank">
               <Icon icon="streamline:instagram-solid" width="24" height="24" className="text-secondary" />
             </Link>
           </div>
