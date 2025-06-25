@@ -19,31 +19,31 @@ export const Footer = ({ locale }: FooterProps) => {
                 <span>Development</span>
             </h2>
             <div className="container px-6 lg:px-0 mx-auto grid grid-cols-2 gap-4 md:grid-cols-4 justify-between items-center">
-                <div className={cn('col-span-2 flex flex-wrap gap-6 items-center')}>
+                <div className={cn('col-span-2 flex flex-col md:flex-row gap-6 items-start md:items-center')}>
                     <Link href="/"
                         aria-label='logo link to home'
                     >
                         <NextImage src="/logo/flow-logo-light.png" alt="Tomomi Inoue" width={78} height={78} />
                     </Link>
-                    {navItems[locale === "en-AU" ? "en" : "ja"].map((item) => (
-                        <Link key={item.href} href={item.href} passHref aria-label={`link to ${item.label}`} >
-                            <p className='text-xs md:text-body04 font-medium cursor-pointer hover:text-cream'>{item.label}</p>
-                        </Link>
-                    ))}
-
-                </div>
-                <div className='col-span-2 flex flex-col lg:flex-row gap-4 items-end justify-end'>
-                    <div className='gap-[10px]'>
-                        <Link href={SocialLinks.linkedin} target="_blank">
-                            <Icon icon="famicons:logo-linkedin" width="24" height="24" className="text-cream" />
-                        </Link>
-                        <Link href={SocialLinks.github} target="_blank">
-                            <Icon icon="jam:github" width="24" height="24" className="text-cream" />
-                        </Link>
-                        <Link href={SocialLinks.instagram} target="_blank">
-                            <Icon icon="streamline:instagram-solid" width="24" height="24" className="text-cream" />
-                        </Link>
+                    <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 text-left md:text-center'>
+                        {navItems[locale === "en-AU" ? "en" : "ja"].map((item) => (
+                            <Link key={item.href} href={item.href} passHref aria-label={`link to ${item.label}`} >
+                                <p className='text-sm lg:text-body04 font-medium cursor-pointer hover:text-cream'>{item.label}</p>
+                            </Link>
+                        ))}
                     </div>
+                </div>
+                <div className='col-span-2 flex flex-row gap-4 items-end justify-end'>
+                    <Link href={SocialLinks.linkedin} target="_blank">
+                        <Icon icon="famicons:logo-linkedin" width="24" height="24" className="text-cream" />
+                    </Link>
+                    <Link href={SocialLinks.github} target="_blank">
+                        <Icon icon="jam:github" width="24" height="24" className="text-cream" />
+                    </Link>
+                    <Link href={SocialLinks.instagram} target="_blank">
+                        <Icon icon="streamline:instagram-solid" width="24" height="24" className="text-cream" />
+                    </Link>
+
                 </div>
             </div>
         </footer>
