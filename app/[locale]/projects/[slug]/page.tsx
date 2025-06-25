@@ -12,6 +12,7 @@ interface PageProps {
     searchParams?: Promise<{ [key: string]: string | string[] }>;
 }
 
+
 export default async function ProjectDetailPage({
     params,
 }: PageProps) {
@@ -32,7 +33,9 @@ export async function generateStaticParams() {
         ? projects
         : await projects;
 
+
     return resolvedProjects.map((project) => ({
         slug: project.slug.replace(/^\//, ''),
     }));
 }
+

@@ -5,6 +5,17 @@ import { Metadata } from 'next';
 type Props = {
   params: Promise<{ locale: "en-AU" | "ja" }>;
 };
+
+export const dynamic = 'force-static';
+
+// 👇 Add this to tell Next.js what locales to build
+export async function generateStaticParams() {
+  return [
+    { locale: "en-AU" },
+    { locale: "ja" },
+  ];
+}
+
 export const metadata: Metadata = {
   title: "Flow Design Code | Web Design & Development",
   description: "Flow Design Code is a UX design and frontend development studio led by Tomomi Inoue...",
@@ -23,7 +34,6 @@ export const metadata: Metadata = {
     ],
   },
 };
-export const dynamic = 'force-static';
 
 export default async function Home({ params }: Props) {
   const { locale } = await params;

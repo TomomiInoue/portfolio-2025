@@ -19,11 +19,13 @@ export const Footer = ({ locale }: FooterProps) => {
             </h2>
             <div className="container px-6 lg:px-0 mx-auto grid grid-cols-2 gap-4 md:grid-cols-4 justify-between items-center">
                 <div className={cn('col-span-2 flex gap-6 items-center')}>
-                    <Link href="/">
+                    <Link href="/"
+                        aria-label='logo link to home'
+                    >
                         <NextImage src="/logo/flow-logo-light.png" alt="Tomomi Inoue" width={78} height={78} />
                     </Link>
                     {navItems[locale === "en-AU" ? "en" : "ja"].map((item) => (
-                        <Link key={item.href} href={item.href} passHref>
+                        <Link key={item.href} href={item.href} passHref aria-label={`link to ${item.label}`} >
                             <p className='text-sm md:text-body04 font-medium cursor-pointer hover:text-cream'>{item.label}</p>
                         </Link>
                     ))}

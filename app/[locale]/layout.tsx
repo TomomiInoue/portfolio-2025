@@ -2,12 +2,12 @@ import React, { ReactNode } from "react";
 import type { Metadata } from "next";
 import "../globals.css";
 import { NextUIProvider } from "@nextui-org/react";
-import { Header } from "../components/Layout/Header/Header";
 import { Footer } from "../components/Layout/Footer/Footer";
 import { notFound } from "next/navigation";
 import { Locale } from "../type/types";
 import { serverSideTranslation } from "../lib/i18n";
 import I18NProvider from "../components/Layout/i18n/i18nProvider";
+import HeaderClient from "../components/Layout/Header/HeaderClient";
 
 const locales = ["en-AU", "ja"] as const;
 type Props = {
@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isJa = locale === "ja";
 
   return {
+    metadataBase: new URL("https://www.flowdesigncode.com"),
     title: isJa ? "フロー・デザイン・コード | ウェブデザインと開発" : "Flow Design Code | Web Design & Development",
     description: isJa
       ? "Flow Design Code は、Tomomi Inoue が率いるUXデザインとフロントエンド開発スタジオです。Next.js、React、TypeScript、Tailwind CSS を活用し、洗練された高性能なWeb体験を提供します。"
@@ -65,7 +66,7 @@ export default async function LocaleLayout({
     <div>
       <I18NProvider locale={locale} namespaces={ns} resources={resources}>
         <NextUIProvider>
-          <Header locale={locale} />
+          <HeaderClient locale={locale} />
           {children}
           <Footer locale={locale} />
         </NextUIProvider>

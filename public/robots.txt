@@ -4,3 +4,6 @@ Allow: /
 
 # Host
 Host: https://www.flowdesigncode.com
+
+# Sitemaps
+Sitemap: https://www.flowdesigncode.com/sitemap.xml
