@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Flow Design Code",
     images: [
       {
-        url: "/logo/logo-main-circle.png",
+        url: "/logo/logo-dark-circle.png",
         width: 600,
         height: 600,
         alt: "Flow Design Code logo",

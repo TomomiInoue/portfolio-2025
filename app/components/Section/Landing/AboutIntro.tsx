@@ -78,7 +78,7 @@ export const AboutIntro = ({
                                 ))
                             }
                         </h6>
-                        <div className={cn("flex gap-1 text-base font-light text-secondary", locale === "ja" ? "flex-col" : "flex-col xl:flex-row")}>
+                        <div className={cn("flex gap-1 text-base font-light text-secondary", locale === "ja" ? "flex-col" : "flex-col")}>
                             {locale === 'en-AU'
                                 ? landingCopy.en.description.map((line, index) => (
                                     <h5 key={index}>
