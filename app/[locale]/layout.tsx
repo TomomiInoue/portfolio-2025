@@ -34,11 +34,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? "洗練されたUXデザインとフロントエンド開発を提供するスタジオ。"
         : "UX design and frontend development studio creating seamless web experiences.",
       locale: locale,
-      url: "https://flow-design-code.vercel.app/",
+      url: "https://www.flowdesigncode.com",
       siteName: "Flow Design Code",
       images: [
         {
-          url: "/logo/flow-logo.png",
+          url: "/logo/logo-main.png",
           width: 600,
           height: 600,
           alt: "Flow Design Code logo",

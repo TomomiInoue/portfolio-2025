@@ -23,7 +23,7 @@ export const Footer = ({ locale }: FooterProps) => {
                     <Link href="/"
                         aria-label='logo link to home'
                     >
-                        <NextImage src="/logo/flow-logo-light.png" alt="Tomomi Inoue" width={78} height={78} />
+                        <NextImage src="/logo/logo-main.png" alt="Tomomi Inoue" width={78} height={78} />
                     </Link>
                     <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 text-left md:text-center'>
                         {navItems[locale === "en-AU" ? "en" : "ja"].map((item) => (

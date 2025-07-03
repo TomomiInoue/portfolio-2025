@@ -18,15 +18,15 @@ export async function generateStaticParams() {
 
 export const metadata: Metadata = {
   title: "Flow Design Code | Web Design & Development",
-  description: "Flow Design Code is a UX design and frontend development studio led by Tomomi Inoue...",
+  description: "Flow Design Code is a UX design and frontend development studio based in Lennox Head, Australia. We create seamless digital experiences that flow with your business needs.",
   openGraph: {
     title: "Flow Design Code",
-    description: "UX design and frontend development studio...",
+    description: "Flow Design Code is a UX design and frontend development studio based in Lennox Head, Australia. We create seamless digital experiences that flow with your business needs.",
     url: "https://www.flowdesigncode.com",
     siteName: "Flow Design Code",
     images: [
       {
-        url: "/logo/flow-logo.png",
+        url: "/logo/logo-main.png",
         width: 600,
         height: 600,
         alt: "Flow Design Code logo",
