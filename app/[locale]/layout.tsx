@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Flow Design Code",
       images: [
         {
-          url: "/logo/logo-main.png",
+          url: "/logo/logo-main-circle.png",
           width: 600,
           height: 600,
           alt: "Flow Design Code logo",
