@@ -39,7 +39,7 @@ export const WorkTogether = ({ locale }:
                 <Button
                     variant='solid'
                     size='md'
-                    className="inline-block px-8 py-3 bg-accent text-cream rounded-lg hover:bg-accent/90 transition-colors font-heebo"
+                    className="inline-block px-8 bg-accent text-cream rounded-lg hover:bg-accent/90 transition-colors font-heebo"
                 >
                     <Link href={locale === "ja" ? "/ja/connect" : "/connect"} className="text-inherit">
                         {locale === "ja"

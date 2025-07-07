@@ -14,11 +14,11 @@ const landingCopy: LandingCopyTypes = {
                 "Empowering Global Brands with Bilingual,",
                 "Human - Centered Web Design"
             ],
-        headline: ["Designing with Empathy,", "Building with Precision"],
+        headline: ["Designing with empathy,", "Building with precision"],
         Subheadline: ["Intuitive, multilingual websites,",
             "built with clean UX and scalable code.",
         ],
-        description: ["💡 Headless CMS", "✍️ Easy Content Edits", "🌐 Multilingual Support"],
+        description: ["💡 Headless CMS", "✍️ Easy content edits", "🌐 Multilingual support"],
     },
     ja: {
         landingCopy: ["バイリンガル対応で、",
@@ -145,7 +145,7 @@ export const LandingComponent = ({
                 />
             </div>
             {/* About Section with scroll anchor */}
-            <div id="about" className="relative z-10 -mt-24 pt-24 bg-primary">
+            <div id="about" className="relative z-10 bg-primary">
                 <div className="absolute top-0 left-0 w-full h-24 z-20 pointer-events-none" />
 
                 <AboutIntro

@@ -75,7 +75,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project, locale }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <div className="text-lg pb-4 font-semibold">{project.name}</div>
+            <div className="text-2xl pb-4 font-semibold">{project.name}</div>
             {/* Right-side Carousel Project Name */}
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 overflow-hidden hidden md:block z-0 pointer-events-none">
                 <motion.div
@@ -120,7 +120,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project, locale }) => {
             <div className="mt-6 z-10 relative items-center justify-end text-brown py-3 px-4 rounded-md font-semibold text-2xl transition-all duration-300 hover:scale-[1.02] flex">
                 <Link
                     href={`/projects/${project.slug}`}
-                    className="px-6 py-2 text-xl font-semibold hover:opacity-70 transition flex items-center"
+                    className="px-6 py-2 text-lg font-semibold hover:opacity-70 transition flex items-center"
                 >
                     <span className="relative">
                         {locale === 'ja' ? '詳細を見る' : 'View Details'}

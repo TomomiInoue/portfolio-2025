@@ -1,6 +1,7 @@
 import React from 'react';
 import { LandingComponent } from '../components/Section/Landing/Landing';
 import { Metadata } from 'next';
+import { Meta } from '../constants/meta';
 
 type Props = {
   params: Promise<{ locale: "en-AU" | "ja" }>;
@@ -16,12 +17,14 @@ export async function generateStaticParams() {
   ];
 }
 
+
 export const metadata: Metadata = {
-  title: "Flow Design Code | Web Design & Development",
-  description: "Flow Design Code is a UX design and frontend development studio based in Lennox Head, Australia. We create seamless digital experiences that flow with your business needs.",
+  title: Meta.en.title,
+  description: Meta.en.description,
   openGraph: {
-    title: "Flow Design Code",
-    description: "Flow Design Code is a UX design and frontend development studio based in Lennox Head, Australia. We create seamless digital experiences that flow with your business needs.",
+    title: Meta.en.title,
+    description: Meta.en.description,
+    type: 'website',
     url: "https://www.flowdesigncode.com",
     siteName: "Flow Design Code",
     images: [

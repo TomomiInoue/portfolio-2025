@@ -106,7 +106,7 @@ export const AboutComponent = ({ locale }: AboutProps) => {
                             },
                             title: {
                                 en: ["Bringing Ideas to Life with Precision and Passion"],
-                                ja: ["アイデアを", "情熱と正確さで", "形にする"]
+                                ja: ["アイデアを", "形にする"]
                             },
                             text: {
                                 en: "I thrive on turning visions into reality. With a sharp eye for detail and a love for animation and design, I work tirelessly to create digital experiences that inspire. Punctuality and dedication drive me to consistently deliver outstanding results.",

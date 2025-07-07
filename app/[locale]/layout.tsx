@@ -8,6 +8,7 @@ import { Locale } from "../type/types";
 import { serverSideTranslation } from "../lib/i18n";
 import I18NProvider from "../components/Layout/i18n/i18nProvider";
 import HeaderClient from "../components/Layout/Header/HeaderClient";
+import { Meta } from "../constants/meta";
 
 const locales = ["en-AU", "ja"] as const;
 type Props = {
@@ -24,15 +25,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: new URL("https://www.flowdesigncode.com"),
-    title: isJa ? "フロー・デザイン・コード | ウェブデザインと開発" : "Flow Design Code | Web Design & Development",
+    title: isJa ? Meta.ja.title : Meta.en.title,
     description: isJa
-      ? "Flow Design Code は、Tomomi Inoue が率いるUXデザインとフロントエンド開発スタジオです。Next.js、React、TypeScript、Tailwind CSS を活用し、洗練された高性能なWeb体験を提供します。"
-      : "Flow Design Code is a UX design and frontend development studio led by Tomomi Inoue. We build high-performance websites using Next.js, React, TypeScript, and Tailwind CSS.",
+      ? Meta.ja.description
+      : Meta.en.description,
+
     openGraph: {
-      title: isJa ? "フロー・デザイン・コード" : "Flow Design Code",
+      title: isJa ? Meta.ja.title : Meta.en.title,
       description: isJa
-        ? "洗練されたUXデザインとフロントエンド開発を提供するスタジオ。"
-        : "UX design and frontend development studio creating seamless web experiences.",
+        ? Meta.ja.description
+        : Meta.en.description,
+      type: "website",
       locale: locale,
       url: "https://www.flowdesigncode.com",
       siteName: "Flow Design Code",
