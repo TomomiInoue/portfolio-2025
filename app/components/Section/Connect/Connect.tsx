@@ -14,13 +14,13 @@ interface ConnectProps {
 const ConnectCopy = {
   en: {
     title: "Connect",
-    description: "I’m always looking for new opportunities to collaborate and create. Whether you’re a brand looking to elevate your digital presence or a fellow creative looking to team up, I’d love to hear from you.",
+    description: "Looking to launch or refresh your website? I’d love to hear your ideas and help bring them to life with thoughtful design and clean code. If you’re a digital agency looking for a frontend collaborator, I’m also open to contract work—let’s chat!",
     ctx: "Or just send me a quick message right here 👇",
     buttonText: "Say Hello",
   },
   ja: {
     title: "コネクト",
-    description: "新しい出会いやワクワクするコラボ、いつでも大歓迎です。ブランドの魅力をもっと伝えたい方も、一緒に何か面白いことをつくりたいクリエイター仲間も、ぜひ気軽にご連絡ください！",
+    description: "新しくサイトを作りたい方、今のサイトをもっと良くしたい方、まずはお気軽にご相談ください。丁寧なデザインとコードで、あなたの想いをカタチにします。制作会社の方とのお仕事も歓迎しています！",
     ctx: "または、ここから気軽にメッセージどうぞ 👇",
     buttonText: "メッセージを送る",
   }
