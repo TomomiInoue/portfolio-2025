@@ -88,7 +88,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project, locale }) => {
             </div>
 
             {/* Images Row */}
-            <Link className="relative z-10 flex flex-row gap-6 items-baseline w-full md:w-1/2" href={`/projects/${project.slug}`}>
+            <Link className="relative z-10 flex flex-col md:flex-row gap-6 items-baseline w-full md:w-1/2" href={`/projects/${project.slug}`}>
                 {/* Mobile Image */}
                 <div className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg " >
                     {project.images?.mobile && (

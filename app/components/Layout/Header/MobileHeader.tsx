@@ -22,7 +22,7 @@ export const MobileHeader = ({
       <NavbarContent>
         <NavbarBrand>
           <Link href="/">
-            <NextImage src="/logo/logo-main-circle.png" alt="Tomomi Inoue" width={48} height={48} />
+            <NextImage src="/logo/logo-rectangle.png" alt="Tomomi Inoue" width={100} height={48} />
           </Link>
         </NavbarBrand>
         <NavbarContent>

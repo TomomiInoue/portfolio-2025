@@ -61,7 +61,7 @@ export const Header = ({ locale }: HeaderProps) => {
                 >
                     <NavbarBrand >
                         <Link href="/">
-                            <NextImage src="/logo/logo-main-circle.png" alt="Tomomi Inoue" width={68} height={68} />
+                            <NextImage src="/logo/logo-rectangle.png" alt="Tomomi Inoue" width={120} height={64} />
                         </Link>
                     </NavbarBrand>
                     <NavbarContent justify="end" className="flex gap-6 justify-end items-center order-2">
